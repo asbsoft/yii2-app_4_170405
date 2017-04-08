@@ -1,0 +1,10 @@
+
+.lang-switch ul {
+    list-style: none;
+}
+.lang-switch ul li a {
+    text-decoration: none;
+}
+.lang-switch .current {
+    font-weight: bold;
+}
