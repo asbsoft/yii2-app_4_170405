@@ -34,46 +34,17 @@
 
     $itemsModules = [];
     if (!Yii::$app->user->isGuest) {
-        if ($hasRoleRoot	//!! developers only
+        if ($hasRoleRoot	//!! modules management: developers only
 //            || $hasRoleAdmin	//   + admins
         ) {
            $label = Yii::t($tc, '(manager)');
-           $actionUid = 'modmgr/admin/index';
+           $actionUid = 'modmgr/admin/index'; // try #1
            if (AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) $itemsModules[] = ['label' => $label, 'url' => ['/' . $actionUid]];
-           $actionUid = 'sys/modmgr/admin/index';
+           $actionUid = 'sys/modmgr/admin/index'; // try #2
            if (AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) $itemsModules[] = ['label' => $label, 'url' => ['/' . $actionUid]];
-        }
 
-        $itemsModules[] = '<li class="divider"></li>';
-
-/*
-        // move to first level
-        $label = Yii::t($tc, 'users');
-        $actionUid = 'sys/users/admin-users/index';
-        if (AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) $itemsModules[] = ['label' => $label, 'url' => ['/' . $actionUid]];
-/**/
-/*
-        $moduleUid = 'contactform3backend';
-        $actionUid = $moduleUid . '/admin/index';
-        $start = BaseModule::startLink($moduleUid, $routesType);//var_dump($start);exit;
-        if (!empty($start) && AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) {
-            $itemsModules[] = ['label' => $start['label'],
-                'url' => isset($start['route']) ? $start['route'] : $start['link']
-            ];
+           $itemsModules[] = '<li class="divider"></li>';
         }
-        // old version
-        //$label = Yii::t($tc, 'Contact form 3');
-        //if (AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) $itemsModules[] = ['label' => $label, 'url' => ['/' . $actionUid]];
-
-        $moduleUid = 'tests/news1b';
-        $actionUid = $moduleUid . '/admin/index';
-        $start = BaseModule::startLink($moduleUid, $routesType);//var_dump($start);exit;
-        if (!empty($start) && AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) {
-            $itemsModules[] = ['label' => $start['label'],
-                'url' => isset($start['route']) ? $start['route'] : $start['link']
-            ];
-        }
-/**/
     }//var_dump($itemsModules);
 
     // auto make menus for modules
@@ -100,26 +71,7 @@
         //$configWidget['items'][] = ['label' => Yii::t($tc, 'login'), 'url' => ["/{$moduleUsersUid}/admin-users/login"]];
         $configWidget['items'][] = ['label' => Yii::t($tc, 'login'), 'url' => ["/{$moduleUsersUid}/admin/login"]];
     } else {
-        if ($hasRoleRoot || $hasRoleAdmin)
-        {
-//            $configWidget['items'][] = [ 'label' => Yii::t($tc, '...'), 'url' => ["/..."] ];
-
-/*
-            $configWidget['items'][] = [ 'label' => Yii::t($tc, '...submenu...'), 'items' => [
-                ['label' => Yii::t($tc, '...'), 'url' => ["/..."]],
-                ['label' => Yii::t($tc, '...'), 'url' => ["/..."]],
-                ['label' => 'RBAC-assignment', 'url' => ['/sys/user/rbac/assignment/index']],
-                ['label' => 'RBAC-role',       'url' => ['/sys/user/rbac/role/index']],
-                ['label' => 'RBAC-permission', 'url' => ['/sys/user/rbac/permission/index']],
-                ['label' => 'RBAC-rule',       'url' => ['/sys/user/rbac/rule/index']],
-            ]];
-*/
-/*
-            $configWidget['items'][] = [ 'label' => Yii::t($tc, 'i18n'), 'items' => [
-                [ 'label' => Yii::t($tc, 'languages'), 'url' => ["/{$admUrlPrefix}/lang"] ],
-                [ 'label' => Yii::t($tc, 'show translations'), 'url' => ["/{$admUrlPrefix}/show-translations"] ],
-            ]];
-*/
+        if ($hasRoleRoot || $hasRoleAdmin) {
             $configWidget['items'][] = [ 'label' => Yii::t($tc, 'service'), 'items' => [
                 [ 'label' => Yii::t($tc, 'clean cache'), 'url' => ["/sys/admin/clean-cache"] ],
                 [ 'label' => Yii::t($tc, 'show routes'), 'url' => ["/sys/admin/show-routes"] ],
