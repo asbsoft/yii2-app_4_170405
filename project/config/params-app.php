@@ -18,18 +18,19 @@ return [
     'version' => $version,
   //'titleAdmin' => Yii::t($tc, 'Adminer'),
 
-    /** Place in file system for uploads files (alias or abs path to root). Not in web root recommended!! */
-    '@uploadspath' => dirname(dirname(dirname(dirname(__DIR__)))) . '/uploads',
-
      /** Subdir from web root to web-files (uploads mirror) */
   //'webfilesSubdir' => 'uploads', // deprecated
     'webfilesSubdir' => 'files', // default in base\CommonBootstrap
+
+    /** Place in file system for uploads files (alias or abs path to root). Not in web root recommended!! */
+    '@uploadspath' => dirname(dirname(__DIR__)) . '/uploads', // safe place
+  //'@uploadspath' => '@webroot/files', // uploads at webroot - not safe!!
 
      /** If not define or false all uploads images will preprocessing before copy to web root */
   //'uploadsDirectCopy' => true, // uncomment if you trust to upload tiles
 
     /** Path to admin interface from baseUrl */
-  //'adminPath'  => 'adm', // need only for BASIC Yii template
+  //'adminPath'  => 'adm', // need only for BASIC Yii template - put it in local config
 
     LangHelper::className() => [
         'langsConfigFname' => __DIR__ . '/languages.php', // languages definition

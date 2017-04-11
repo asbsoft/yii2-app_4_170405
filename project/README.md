@@ -25,8 +25,13 @@ Installation
   Add users, change standard passwords and roles for users as you want.
   User(s) with role 'roleRoot' has maximum allows in system.
   New modules can add their own roles like roleContentAuthor/Moderator in content module.
-* Before you add first visible content page
-  frontend will return you 404 'Not found' error.
+* Before you add first visible content page frontend may return you 404 'Not found' error.
+! By default all uploads put in common uploads folder out of web root.
+  For correct copying files from uploads folder to web root here use Apache mod_rewrite.
+  If there are problems of copiing upload files you can set
+  '@uploadspath' => '@webroot/files' in /project/config/params-app.php.
+  After that uploads folder move traditionally to webroot.
+  Note that webroots for Yii2 basic and advanced applications are different.
 
 Add content pages to site
 -------------------------
