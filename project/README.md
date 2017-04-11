@@ -15,13 +15,12 @@ Installation
   - If you want to work with Yii 2 Basic Project Template create subdomain with web root in /basic/web/
     or tune 'baseUrl' for 'request' component in /basic/config/web-local.php for run basic site from subdir.
 * For create core data tables run migrations at
-  - /vendor/asbsoft/yii2-common_2_170212/migrations/rbac/
-  - /vendor/asbsoft/yii2module/modmgr_1_161205/migrations/
   - /vendor/asbsoft/yii2module/users_0_170112/migrations/
     - tune here id, login, password for admin user(s)
   - /vendor/asbsoft/yii2module/users_0_170112/migrations/rbac/
     - users id here must correspond with previous migrations
   - /vendor/asbsoft/yii2module/content_2_170309/migrations/
+  - /vendor/asbsoft/yii2module/modmgr_1_161205/migrations/
 * Use root/toor4321 to backend login.
   Add users, change standard passwords and roles for users as you want.
   User(s) with role 'roleRoot' has maximum allows in system.
