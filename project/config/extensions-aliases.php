@@ -16,4 +16,4 @@
     Yii::setAlias('@mihaildev/ckeditor', '@vendor/mihaildev/yii2-ckeditor');
     Yii::setAlias('@mihaildev/elfinder', '@vendor/mihaildev/yii2-elfinder');
 
-    //echo __METHOD__;var_dump(Yii::$aliases);exit;
+    //echo __FILE__;var_dump(Yii::$aliases);exit;

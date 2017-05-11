@@ -21,7 +21,7 @@
     use yii\helpers\ArrayHelper;
 
     /* Prepare some aliases need for autoload */
-    require __DIR__ . '/extensions-aliases.php';
+    require __DIR__ . '/extensions-aliases.php';//var_dump(Yii::$aliases);exit;
 
     /* Prepare some variables here:
         $type, $params, $paramsCms,

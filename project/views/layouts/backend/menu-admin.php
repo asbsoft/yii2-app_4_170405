@@ -5,10 +5,11 @@
     use asb\yii2\common_2_170212\rbac\AuthHelper;
     use asb\yii2\common_2_170212\helpers\MenuBuilder;
 
-    //use yii\bootstrap\Nav;
     use asb\yii2\common_2_170212\widgets\dropdownmultilevel\Menu as Nav;
+    //use yii\bootstrap\Nav;
 
     use yii\helpers\Url;
+    use yii\helpers\Html;
     use yii\helpers\ArrayHelper;
 
     $routesType = 'admin';
@@ -79,9 +80,10 @@
                 [ 'label' => Yii::t($tc, 'show aliases'), 'url' => ["/sys/admin/show-aliases"] ],
             ]];
         }
+/*
+        // CSS - OK, but you can't logout without javascript in browser or on javascript error, can't auto-testing
         $configWidget['items'][] = [
             'label' => Yii::t($tc, 'logout') . ' (' . Yii::$app->user->identity->username . ')',
-            //'url' => ["/{$moduleUsersUid}/admin-users/logout"],
             'url' => ["/{$moduleUsersUid}/admin/logout"],
             'linkOptions' => [
                 'data' => [
@@ -90,6 +92,20 @@
                 ]
             ],
         ];
+/**/
+//*
+        // original version: work always, but CSS-problem on link hover
+        $configWidget['items'][] = '<li>'
+            . Html::beginForm(["/{$moduleUsersUid}/admin/logout"], 'post')
+            . Html::submitButton(Yii::t($tc, 'logout') . ' (' . Yii::$app->user->identity->username . ')', [
+                  'class' => 'btn btn-link logout',
+                  'data' => [
+                      'confirm' => Yii::t($tc, 'Are you sure to logout?'),
+                  ],
+              ])
+            . Html::endForm()
+            . '</li>';
+/**/
     }//var_dump($configWidget);exit;
 
     echo Nav::widget($configWidget);

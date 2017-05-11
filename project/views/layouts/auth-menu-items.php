@@ -10,7 +10,7 @@
         $menuItems0 = $menuItems;
     }
 
-    $tc = 'app/sys/module';
+    $tc = 'app/sys/module';//$trlist = array_keys(Yii::$app->i18n->translations);$modlist = array_keys(Yii::$app->loadedModules);xdebug_break();
 
     $moduleUsersUid = 'sys/users';
     //$moduleUsersUid = 'users';
@@ -50,7 +50,6 @@
             . Html::submitButton(Yii::t($tc, 'Logout') . ' (' . Yii::$app->user->identity->username . ')', [
                   'class' => 'btn btn-link logout',
                   'data' => [
-                      'method' => 'post',
                       'confirm' => Yii::t($tc, 'Are you sure to logout?'),
                   ],
               ])
@@ -58,7 +57,7 @@
             . '</li>';
 /**/
 /*
-        // CSS - OK, but you can't logout without javascript in browser or on javascript error
+        // CSS - OK, but you can't logout without javascript in browser or on javascript error, can't auto-testing
         $_menuItems[] = [
             'label' => Yii::t($tc, 'Logout') . ' (' . Yii::$app->user->identity->username . ')',
             'url' => ["/{$moduleUsersUid}/main/logout"],
