@@ -1,7 +1,7 @@
 {
     "name": "asbsoft/yii2-app_4_170405",
     "description": "Yii2 application example based on united modules",
-    "keywords": ["yii2", "application"],
+    "keywords": ["yii2", "application", "cms"],
     "type": "project",
     "license": "BSD-3-Clause",
     "authors": [

@@ -13,6 +13,7 @@ return [
     'en-US' => [
         'prio'          => 10,
         'is_visible'    => true,
+      //'is_visible'    => false,
 
         'country_code'  => 'us',
         'code_full'     => 'en-US',
