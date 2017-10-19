@@ -103,6 +103,7 @@
             ],
             'mailer' => [
                 'class' => 'yii\swiftmailer\Mailer',
+                'viewPath' => '@project/views/mail',
 //*
                 'useFileTransport' => true, // if true send all mails to files by default
                 'fileTransportPath' => '@runtime/mail',
