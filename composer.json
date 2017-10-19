@@ -17,9 +17,9 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0",
 
         "asbsoft/yii2-common_2_170212": "~2.05",
-        "asbsoft/yii2module-users_0_170112": "*",
-        "asbsoft/yii2module-content_2_170309": "*",
-        "asbsoft/yii2module-modmgr_1_161205": "*"
+        "asbsoft/yii2module-users_0_170112": "dev-master",
+        "asbsoft/yii2module-content_2_170309": "dev-master",
+        "asbsoft/yii2module-modmgr_1_161205": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
