@@ -15,7 +15,8 @@ $appTemplate = UniApplication::APP_TEMPLATE_ADVANCED;
 $type = UniApplication::APP_TYPE_BACKEND;
 
 $rootDir = dirname(dirname(__DIR__));
-$vendorDir = $rootDir . DIRECTORY_SEPARATOR . 'vendor';
+$vendorDir = $rootDir . '/vendor';
+$runtimePath = $rootDir . '/runtime/backend';
 
 $params = array_merge(
     require(__DIR__ . '/../../common/config/params.php'),
@@ -30,7 +31,10 @@ $config = [
     'appTemplate' => $appTemplate,
     'type' => $type,
     'id' => 'app-' . $type,
+
     'basePath' => dirname(__DIR__),
+    'runtimePath' => $runtimePath,
+
     'controllerNamespace' => 'backend\controllers',
 
     'bootstrap' => ['log'],

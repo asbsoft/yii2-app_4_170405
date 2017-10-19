@@ -13,29 +13,21 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.10",
-        "asbsoft/yii2-common_2_170212": "~2.03",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+
+        "asbsoft/yii2-common_2_170212": "~2.05",
         "asbsoft/yii2module-users_0_170112": "*",
         "asbsoft/yii2module-content_2_170309": "*",
         "asbsoft/yii2module-modmgr_1_161205": "*"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2-common_2_170212"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2module-users_0_170112"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2module-content_2_170309"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2module-modmgr_1_161205"
-        }
-    ],
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.0.0",
+        "yiisoft/yii2-gii": "~2.0.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/base": "^2.2.3",
+        "codeception/verify": "~0.3.1"
+    },
     "autoload": {
         "psr-4": {
             "project\\": ""
