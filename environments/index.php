@@ -34,10 +34,13 @@ return [
         'setWritable' => [
             'backend/runtime',
             'backend/web/assets',
+            'backend/web/files',
             'frontend/runtime',
             'frontend/web/assets',
+            'frontend/web/files',
             'basic/runtime',
             'basic/web/assets',
+            'basic/web/files',
         ],
         'setExecutable' => [
             'yii',
@@ -54,10 +57,13 @@ return [
         'setWritable' => [
             'backend/runtime',
             'backend/web/assets',
+            'backend/web/files',
             'frontend/runtime',
             'frontend/web/assets',
+            'frontend/web/files',
             'basic/runtime',
             'basic/web/assets',
+            'basic/web/files',
         ],
         'setExecutable' => [
             'yii',
