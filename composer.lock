@@ -11,8 +11,8 @@
             "version": "2.05",
             "source": {
                 "type": "git",
-                "url": "https://github.com/asbsoft/yii2-common_2_170212",
-                "reference": "278f08aeda206b5283f8af88a4caacb8d737b658"
+                "url": "https://github.com/asbsoft/yii2-common_2_170212.git",
+                "reference": "f0e1d66b07f73d8dfae838b377a2aa80b6e16cf7"
             },
             "require": {
                 "lafeber/world-flags-sprite": "*",
@@ -29,6 +29,7 @@
                     "asb\\yii2\\": ""
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -43,7 +44,7 @@
                 "extensions",
                 "yii2"
             ],
-            "time": "2017-04-09T16:12:08+00:00"
+            "time": "2017-05-11 17:36:30"
         },
         {
             "name": "asbsoft/yii2module-content_2_170309",
