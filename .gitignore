@@ -1,5 +1,17 @@
 
 /runtime/
 /uploads/
-/vagrant/
 /vendor/
+
+/backend/runtime/
+/backend/web/assets/
+/backend/web/files/
+
+/basic/runtime/
+/basic/web/assets/
+/basic/web/files/
+
+/frontend/runtime/
+/frontend/web/assets/
+/frontend/web/files/
+
