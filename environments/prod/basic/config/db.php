@@ -6,5 +6,5 @@ return [
     'username' => 'root',
     'password' => 'root',
     'charset' => 'utf8',
-    'tablePrefix' => 'app_',
+    'tablePrefix' => 'y2app_',
 ];
