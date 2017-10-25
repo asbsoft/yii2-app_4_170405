@@ -11,6 +11,11 @@
         }
     ],
     "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "project\\": "project"
+        }
+    },
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.10",
@@ -29,9 +34,22 @@
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1"
     },
-    "autoload": {
-        "psr-4": {
-            "project\\": "project"
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/asbsoft/yii2-common_2_170212.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/asbsoft/yii2module-users_0_170112.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/asbsoft/yii2module-content_2_170309.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/asbsoft/yii2module-modmgr_1_161205.git"
         }
-    }
+    ]
 }
