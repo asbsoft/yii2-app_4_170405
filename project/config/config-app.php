@@ -138,16 +138,27 @@
                     ],
                 ],
             ],
-           'i18n' => [
-               'translations' => [
-                   'common' => [
-                       'class' => 'asb\yii2\common_2_170212\i18n\UniPhpMessageSource',                    
-                       'basePath' => '@asb/yii2/common_2_170212/messages',
-                       'sourceLanguage' => 'en',
-                       'on missingTranslation' => ['asb\yii2\common_2_170212\i18n\TranslationEventHandler', 'handleMissingTranslation'],
-                   ],
-               ],
-           ],
+            'i18n' => [
+                'translations' => [
+                    'common' => [
+                        'class' => 'asb\yii2\common_2_170212\i18n\UniPhpMessageSource',                    
+                        'basePath' => '@asb/yii2/common_2_170212/messages',
+                        'sourceLanguage' => 'en',
+                        'on missingTranslation' => ['asb\yii2\common_2_170212\i18n\TranslationEventHandler', 'handleMissingTranslation'],
+                    ],
+                ],
+            ],
+            'lang' => [
+                'class' => 'asb\yii2\common_2_170212\i18n\LangConfigArray', // get languages from array
+                'langsConfigFname' => __DIR__ . '/languages.php',
+                'params' => [
+                    'cookieDefaultLanguage' => 'def-lang',
+                    'sessionDefaultLanguage' => 'sess-def-lang',
+                    'langCookieExpiredSec'  => 2678400, // 31days, 1day = 86400sec
+                    'appTypePrefix' => $type,
+                ],
+            ],
+
         ],
 
         'bootstrap' => [

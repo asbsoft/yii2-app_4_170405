@@ -26,12 +26,13 @@ return [
     '@uploadspath' => dirname(dirname(__DIR__)) . '/uploads', // safe place
   //'@uploadspath' => '@webroot/files', // uploads at webroot - not safe!!
 
-     /** If not define or false all uploads images will preprocessing before copy to web root */
+    /** If not define or false all uploads images will preprocessing before copy to web root */
   //'uploadsDirectCopy' => true, // uncomment if you trust to upload tiles
 
     /** Path to admin interface from baseUrl */
   //'adminPath'  => 'adm', // need only for BASIC Yii template - put it in local config
 
+/* !! DEPRECATED (these parameters move to component Yii:$app->lang):
     LangHelper::className() => [
         'langsConfigFname' => __DIR__ . '/languages.php', // languages definition
         'cookieDefaultLanguage' => 'def-lang', // cookie name for save language, false to disable saving
@@ -39,7 +40,7 @@ return [
         'langCookieExpiredSec'  => 2678400, // 31days,  1day = 86400sec
       //'langCookieExpiredSec'  => 1, // 1sec - don't save lang in cookie
     ],
-
+*/
     UserIdentity::className() => [
         'userModuleUniqueId' => 'sys/users',    // module uniqueId contains user identity
         'userManagerAlias'   => 'UserIdentity', // user identity model alias, see UniModule::model($alias)

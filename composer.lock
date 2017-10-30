@@ -8,11 +8,11 @@
     "packages": [
         {
             "name": "asbsoft/yii2-common_2_170212",
-            "version": "2.05",
+            "version": "2.06",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asbsoft/yii2-common_2_170212.git",
-                "reference": "f0e1d66b07f73d8dfae838b377a2aa80b6e16cf7"
+                "reference": "216d2b8b3536dd4059f1deac2f6388031c6e5649"
             },
             "require": {
                 "lafeber/world-flags-sprite": "*",
@@ -44,7 +44,7 @@
                 "extensions",
                 "yii2"
             ],
-            "time": "2017-05-11T17:36:30+00:00"
+            "time": "2017-10-30T12:45:37+00:00"
         },
         {
             "name": "asbsoft/yii2module-content_2_170309",
