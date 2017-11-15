@@ -22,7 +22,7 @@
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
 
-        "asbsoft/yii2-common_2_170212": "~2.06",
+        "asbsoft/yii2-common_2_170212": "~2.07",
         "asbsoft/yii2module-users_0_170112": "dev-master",
         "asbsoft/yii2module-content_2_170309": "dev-master",
         "asbsoft/yii2module-modmgr_1_161205": "dev-master"

@@ -148,7 +148,7 @@
                     ],
                 ],
             ],
-            'lang' => [
+            'langManager' => [
                 'class' => 'asb\yii2\common_2_170212\i18n\LangConfigArray', // get languages from array
                 'langsConfigFname' => __DIR__ . '/languages.php',
                 'params' => [

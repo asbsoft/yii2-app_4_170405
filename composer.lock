@@ -8,11 +8,11 @@
     "packages": [
         {
             "name": "asbsoft/yii2-common_2_170212",
-            "version": "2.06",
+            "version": "2.07",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asbsoft/yii2-common_2_170212.git",
-                "reference": "216d2b8b3536dd4059f1deac2f6388031c6e5649"
+                "reference": "b4ac465594509b2c45078c092fffdd011425dde6"
             },
             "require": {
                 "lafeber/world-flags-sprite": "*",
