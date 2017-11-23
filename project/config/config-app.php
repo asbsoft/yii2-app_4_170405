@@ -73,9 +73,11 @@
                 // this is the name of the session cookie used for login on the backend
                 'name' => $config['appTemplate'] . '-' . $config['type'],
             ],
+/*
             'cache' => [
-                'class' => 'yii\caching\FileCache',
+                'class' => 'yii\caching\FileCache', // move to 'local' configs
             ],
+*/
             'urlManager' => [
                 //'class' => 'yii\web\UrlManager', // default
                 //'class' => 'asb\yii2\common_2_170212\web\UrlManager', 'sitetreeModuleUniqueId' => 'sys', 'sitetreeManagerAlias' => 'UrlManager',

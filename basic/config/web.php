@@ -6,8 +6,8 @@ $appTemplate = UniApplication::APP_TEMPLATE_BASIC;
 $type = UniApplication::APP_TYPE_UNITED;
 
 $rootDir = dirname(__DIR__);
-$vendorPath = dirname($rootDir) . DIRECTORY_SEPARATOR . 'vendor';
-$runtimePath = $rootDir . DIRECTORY_SEPARATOR . 'runtime';
+$vendorPath = dirname($rootDir) . '/vendor';
+$runtimePath = dirname($rootDir) . '/runtime/basic';
 
 Yii::setAlias('@vendor', $vendorPath);
 
