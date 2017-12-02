@@ -3,6 +3,7 @@
 namespace project\modules\sys\controllers;
 
 use asb\yii2\common_2_170212\base\UniModule;
+use asb\yii2\common_2_170212\base\ModulesManager;
 use asb\yii2\common_2_170212\controllers\BaseAdminController;
 
 use Yii;
@@ -65,7 +66,8 @@ class AdminController extends BaseAdminController
 
     public function actionShowTranslations()
     {
-        $result = var_export(Yii::$app->i18n->translations, true);
+        ModulesManager::initSubmodules(Yii::$app);
+        //$result = var_export(Yii::$app->i18n->translations, true);
 //*
         // better show:
         ob_start();
