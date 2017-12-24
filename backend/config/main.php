@@ -8,8 +8,11 @@ use asb\yii2\common_2_170212\base\UniApplication;
  * String not start and end with '/'.
  * Comment it if you not use /.haccess for shifting webroot.
  */
-$adminUrlPrefixHtaccess = 'back';
-//$adminUrlPrefixHtaccess = ''; // if no shift by .haccess
+
+if (!isset($adminUrlPrefixHtaccess)) {
+    $adminUrlPrefixHtaccess = 'back';
+  //$adminUrlPrefixHtaccess = ''; // if no shift by .haccess
+}
 
 $appTemplate = UniApplication::APP_TEMPLATE_ADVANCED;
 $type = UniApplication::APP_TYPE_BACKEND;
