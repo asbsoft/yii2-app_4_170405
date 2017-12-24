@@ -4,7 +4,9 @@ Yii2 application example based on united modules
 
 Installation
 ------------
-- Unpack this project to hosting's web root.
+- Download from https://github.com/asbsoft/yii2-app_4_170405
+  and unpack this project to hosting's web root.
+  (or git clone https://github.com/asbsoft/yii2-app_4_170405.git)
 - Run in root folder contains composer.json file:
     composer install
 - Prepare and save if need your own configurations
@@ -14,6 +16,16 @@ Installation
   Then run init-script in root folder.
 - Apply all migrations (yii migrate/up ...) in every package of asbsoft vendor.
   In users-package migrations you cat tune default users logins and passwords.
+- Note that "composer install" is slowest and not optimal part of installation
+  (will download more than 300MB dependencies instead of less than 100MB really required).
+  To optimize this process after download asbsoft/yii2-app_4_170405
+  you can download standard yii2-application (for example
+  https://github.com/yiisoft/yii2/releases/download/2.0.12/yii-basic-app-2.0.12.tgz)
+  and get from it only whole /vendor/-folder and necessarily /composer.lock (not /composer.json) file.
+  Next download by composer only required for yii2-app_4_170405 packages from asbsoft-vendor
+  (see /composer.json), for example
+    composer require asbsoft/yii2module-content_2_170309
+  and other if need (usually installation one of them install all another).
 
 Notes
 -----

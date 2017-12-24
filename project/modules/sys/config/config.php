@@ -34,8 +34,16 @@
     $config['modules'][$nextModuleId] = [
         'class' => 'project\modules\sys\modules\user\Module',
         'routesConfig' => [ // type => prefix|config
-            'admin' => $type == UniApplication::APP_TYPE_FRONTEND ? false : 'usr',
-            'main'  => $type == UniApplication::APP_TYPE_BACKEND  ? false : 'usr',
+          //'admin' => $type == UniApplication::APP_TYPE_FRONTEND ? false : 'usr',
+          //'main'  => $type == UniApplication::APP_TYPE_BACKEND  ? false : 'usr',
+            'admin' => [
+                'urlPrefix' =>
+                    $type == UniApplication::APP_TYPE_FRONTEND ? false : 'usr',
+            ],
+            'main'  => [
+                'urlPrefix' =>
+                    $type == UniApplication::APP_TYPE_BACKEND  ? false : 'usr',
+            ],
         ],
     ];
     $config['bootstrap'][] = $nextModuleId;
