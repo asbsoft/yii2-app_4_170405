@@ -5,9 +5,9 @@ require(__DIR__ . '/../../vendor/yiisoft/yii2/Yii.php');
 require(__DIR__ . '/../../common/config/bootstrap.php');
 require(__DIR__ . '/../config/bootstrap.php');
 
-require(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/autoload.php');
-require(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/base/UniApplication.php');
-require(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/web/RequestHelper.php');
+require_once(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/autoload.php');
+require_once(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/base/UniApplication.php');
+require_once(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/web/RequestHelper.php');
 
 $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/../../common/config/main.php'),

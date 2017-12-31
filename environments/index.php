@@ -1,77 +1,32 @@
 <?php
 /**
- * The manifest of files that are local to specific environment.
- * This file returns a list of environments that the application
- * may be installed under. The returned data must be in the following
- * format:
+ * Yii Application Initialization Tool Configs Searcher
  *
- * ```php
- * return [
- *     'environment name' => [
- *         'path' => 'directory storing the local files',
- *         'skipFiles'  => [
- *             // list of files that should only copied once and skipped if they already exist
- *         ],
- *         'setWritable' => [
- *             // list of directories that should be set writable
- *         ],
- *         'setExecutable' => [
- *             // list of files that should be set executable
- *         ],
- *         'setCookieValidationKey' => [
- *             // list of config files that need to be inserted with automatically generated cookie validation keys
- *         ],
- *         'createSymlink' => [
- *             // list of symlinks to be created. Keys are symlinks, and values are the targets.
- *         ],
- *     ],
- * ];
- * ```
+ * @author ASB <ab2014box@gmail.com>
  */
-return [
-    'Development' => [
-        'path' => 'dev',
-        'setWritable' => [
-            'backend/runtime',
-            'backend/web/assets',
-            'backend/web/files',
-            'frontend/runtime',
-            'frontend/web/assets',
-            'frontend/web/files',
-            'basic/runtime',
-            'basic/web/assets',
-            'basic/web/files',
-        ],
-        'setExecutable' => [
-            'yii',
-            'yii_test',
-        ],
-        'setCookieValidationKey' => [
-            'backend/config/cookie-key.php',
-            'frontend/config/cookie-key.php',
-            'basic/config/cookie-key.php',
-        ],
-    ],
-    'Production' => [
-        'path' => 'prod',
-        'setWritable' => [
-            'backend/runtime',
-            'backend/web/assets',
-            'backend/web/files',
-            'frontend/runtime',
-            'frontend/web/assets',
-            'frontend/web/files',
-            'basic/runtime',
-            'basic/web/assets',
-            'basic/web/files',
-        ],
-        'setExecutable' => [
-            'yii',
-        ],
-        'setCookieValidationKey' => [
-            'backend/config/cookie-key.php',
-            'frontend/config/cookie-key.php',
-            'basic/config/cookie-key.php',
-        ],
-    ],
-];
+
+$configs = [];
+
+$handle = opendir(__DIR__);
+while (($name = readdir($handle)) !== false) {
+    if ($name === '.git' || $name === '.svn' || $name === '.' || $name === '..') {
+        continue;
+    }
+    $path = __DIR__ . '/' . $name;
+    if (!is_dir($path)) {
+        continue;
+    }
+    $configFile = "{$path}.php";
+    if (!is_file($configFile)) {
+        continue;
+    }
+    $config = include($configFile);
+
+    $keys = array_keys($config);
+    if (array_key_exists($keys[0], $configs)) {
+        die("*** Error: Configuration '{$keys[0]}' already exists. File '{$configFile}'.");
+    }
+    $configs = array_merge($configs, $config);
+}
+closedir($handle);
+return $configs;
