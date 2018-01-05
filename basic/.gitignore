@@ -1,0 +1,11 @@
+
+runtime/
+web/assets/
+web/files/
+config/console.php
+config/cookie-key.php
+config/db.php
+config/params-local.php
+config/test.php
+config/test_db.php
+config/web-local.php
