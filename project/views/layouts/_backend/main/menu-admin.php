@@ -16,13 +16,13 @@
     
     $moduleUsersUid = 'sys/users';
 
-    //$tc = $this->context->tcModule;//?! 'app/sys/module' | 'app/sys/users/module'
+    //$tc = $this->context->tcModule; //!! illegal: use current controller context
     $tc = 'app/sys/module';
 
     $admUrlPrefix = Yii::$app->params['adminPath'];
 
-    $hasRoleRoot = Yii::$app->authManager->getAssignment('roleRoot', Yii::$app->user->id);//var_dump($hasRoleRoot);
-    $hasRoleAdmin = Yii::$app->authManager->getAssignment('roleAdmin', Yii::$app->user->id);//var_dump($hasRoleAdmin);exit;
+    $hasRoleRoot = Yii::$app->authManager->getAssignment('roleRoot', Yii::$app->user->id);
+    $hasRoleAdmin = Yii::$app->authManager->getAssignment('roleAdmin', Yii::$app->user->id);
 
     $configWidget = [
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -46,10 +46,10 @@
 
            $itemsModules[] = '<li class="divider"></li>';
         }
-    }//var_dump($itemsModules);
+    }
 
     // auto make menus for modules
-    $itemsModules = ArrayHelper::merge($itemsModules, MenuBuilder::modulesMenuitems($routesType));//var_dump($itemsModules);
+    $itemsModules = ArrayHelper::merge($itemsModules, MenuBuilder::modulesMenuitems($routesType));
 
     if ($itemsModules) {
         $configWidget['items'][] = ['label' => Yii::t($tc, 'modules'),
@@ -59,12 +59,10 @@
     }
 
     $label = Yii::t($tc, 'content');
-    //$actionUid = 'sys/users/admin-users/index';
     $actionUid = 'sys/content/admin/index';
     if (AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) $configWidget['items'][] = ['label' => $label, 'url' => ['/' . $actionUid]];
 
     $label = Yii::t($tc, 'users');
-    //$actionUid = 'sys/users/admin-users/index';
     $actionUid = 'sys/users/admin/index';
     if (AuthHelper::canUserRunAction($actionUid, Yii::$app->user)) $configWidget['items'][] = ['label' => $label, 'url' => ['/' . $actionUid]];
 
@@ -106,6 +104,6 @@
             . Html::endForm()
             . '</li>';
 /**/
-    }//var_dump($configWidget);exit;
+    }
 
     echo Nav::widget($configWidget);

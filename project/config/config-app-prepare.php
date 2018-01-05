@@ -39,12 +39,12 @@
     } elseif ($type == UniApplication::APP_TYPE_BACKEND) {
         $loginUrl = $routeLoginBackend;
         $errorAction = $errorActionBackend;
-        $layoutPath = '@project/views/layouts/backend';
+        $layoutPath = '@project/views/layouts/_backend';
     } elseif ($type == UniApplication::APP_TYPE_UNITED) {
         $loginUrl = null; // not set or dynamic
         $errorAction = $errorActionFrontend;
         //BaseController::$layoutPath = '@project/views/layouts';//??
-        BaseAdminController::$layoutPathBackend = '@project/views/layouts/backend';
+        BaseAdminController::$layoutPathBackend = '@project/views/layouts/_backend';
 /*
         $layouts = [
             'frontend' => 'main',

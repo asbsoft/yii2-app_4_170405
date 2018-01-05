@@ -28,7 +28,7 @@ Installation
 * Before you add first visible content page frontend may return you 404 'Not found' error.
 ! By default all uploads put in common uploads folder out of web root.
   For correct copying files from uploads folder to web root here use Apache mod_rewrite.
-  If there are problems of copiing upload files you can set
+  If there are problems of copying upload files you can set
   '@uploadspath' => '@webroot/files' in /project/config/params-app.php.
   After that uploads folder move traditionally to webroot.
   Note that webroots for Yii2 basic and advanced applications are different.

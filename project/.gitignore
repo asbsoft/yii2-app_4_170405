@@ -1,0 +1,8 @@
+
+/tests/_support/_generated/*.*
+
+# can have private db tunes
+/tests/codeception.yml
+
+# can have private passwords
+/tests/acceptance.suite.yml

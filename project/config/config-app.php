@@ -49,17 +49,18 @@
 
         'layoutPath' => '@project/views/layouts',
 
+        // Site layout
+        //'layout' => 'main', // 'main' is default layout set in yii\base\Application
+//      'layout' => 'new',
+
         // Defauld language will get from LangHelper::defaultLanguage()
         // For turn off saving and getting default language from cookie,
         // set in params file params-app.php: 'asb\yii2\common_2_170212\i18n\LangHelper' => ['langCookieExpiredSec' => 1]
-        //'language' => 'en-US', //!! Do not set default language here.
+        //'language' => 'en-US', // !! Do not set default language here.
 
-        // Application default route
-        //'defaultRoute' => 'site', // default in yii\web\Application - 'site/index'
-        //'defaultRoute' => 'site/about',
-        //'defaultRoute' => ['sys/content/main/view', 'id' => 0], //error: must be string
-        //'defaultRoute' => 'sys/content/main/view', //!! not here - move to sys/content-module bootstrap
-           //!! if module sys/content is off on '404 not found' error will be recursive exceptions
+        // Application default route.
+        // !! Do not set default route here if use content-module (asb\yii2\modules\content_2_170309\Module).
+        //'defaultRoute' => 'site', // 'site' is default route set in yii\web\Application
 
         'components' => [
             'view' => [
@@ -73,11 +74,6 @@
                 // this is the name of the session cookie used for login on the backend
                 'name' => $config['appTemplate'] . '-' . $config['type'],
             ],
-/*
-            'cache' => [
-                'class' => 'yii\caching\FileCache', // move to 'local' configs
-            ],
-*/
             'urlManager' => [
                 //'class' => 'yii\web\UrlManager', // default
                 //'class' => 'asb\yii2\common_2_170212\web\UrlManager', 'sitetreeModuleUniqueId' => 'sys', 'sitetreeManagerAlias' => 'UrlManager',
@@ -122,13 +118,11 @@
                 ],
 /**/
             ],
-//*
             'errorHandler' => [
                 'class' => 'asb\yii2\common_2_170212\web\UniErrorHandler',
                 'errorAction' => $errorAction,
                 'errorActionBackend' => $errorActionBackend,
             ],
-/**/
             'log' => [
                 'traceLevel' => YII_DEBUG ? 3 : 0,
                 'targets' => [
@@ -148,6 +142,15 @@
                         'sourceLanguage' => 'en',
                         'on missingTranslation' => ['asb\yii2\common_2_170212\i18n\TranslationEventHandler', 'handleMissingTranslation'],
                     ],
+                    '*' => [
+                        'class' => 'asb\yii2\common_2_170212\i18n\UniPhpMessageSource',                    
+                        'basePath' => '@project/messages',
+                        'sourceLanguage' => 'en',
+                        'on missingTranslation' => [
+                            'asb\yii2\common_2_170212\i18n\TranslationEventHandler',
+                            'handleMissingTranslation'  // используется для сбора в логах недостающих переводов
+                        ],
+                    ],
                 ],
             ],
             'langManager' => [
@@ -166,10 +169,8 @@
         'bootstrap' => [
             'asb\yii2\common_2_170212\base\CommonBootstrap', // common for all system
             'project\modules\modmgr\Bootstrap', // module manager's bootstrap
-          //'project\modules\sys\modules\modmgr\Bootstrap', //?? can't work as submodule
         ],
         'modules' => [
-//*
             'modmgr' => [
                 'class' => 'project\modules\modmgr\Module',
                 'routesConfig' => [ // type => prefix|config
@@ -178,7 +179,6 @@
                                : false,
                 ],
             ],
-/**/
         ],
 
     ];

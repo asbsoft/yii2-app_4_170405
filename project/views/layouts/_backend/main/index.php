@@ -3,7 +3,7 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-    use project\assets\SiteAsset;
+    use project\assets\MainSiteAsset;
 
     use asb\yii2\common_2_170212\widgets\Alert;
 
@@ -13,13 +13,13 @@
     use yii\widgets\Breadcrumbs;
     use yii\web\YiiAsset;
 
-    SiteAsset::register($this); // need yii.js for js-confirm in menu
-    YiiAsset::register($this); // need yii.js for js-confirm in menu
+    $assets = MainSiteAsset::register($this); // contain YiiAsset::register($this); // need yii.js for js-confirm in menu
 
     //$tc = $this->context->tcModule; //!! illegal: use current controller context
     $tc = 'app/sys/module';
 
     $adminUrl = Yii::$app->homeUrl . Yii::$app->params['adminPath'];
+
 
 ?>
 <?php $this->beginPage() ?>
@@ -38,8 +38,6 @@
 <div class="wrap">
     <?php
 
-//echo'<br>isGuest:';var_dump(Yii::$app->user->isGuest);
-    
     NavBar::begin([
         'brandLabel' => Yii::t($tc, 'Adminer'),
         'brandUrl' => $adminUrl,

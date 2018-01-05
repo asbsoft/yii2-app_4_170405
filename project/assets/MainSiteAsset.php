@@ -3,18 +3,20 @@
 namespace project\assets;
 
 use yii\web\AssetBundle;
-//use yii\web\View;
+use yii\web\View;
 
-class SiteAsset extends AssetBundle
+class MainSiteAsset extends AssetBundle
 {
-    public $css = ['site.css'];
+    public $css = [
+        'site.css',
+    ];
     //public $js = [];
     //public $jsOptions = ['position' => View::POS_BEGIN];
 
     public function init()
     {
         parent::init();
-        $this->sourcePath = __DIR__ . '/site';
+        $this->sourcePath = __DIR__ . '/main';
     }
 
     public $depends = [

@@ -1,7 +1,7 @@
 <?php
 
-/* @var $tc */
-/* @var $menuItems */
+    /* @var $tc */
+    /* @var $menuItems */
 
     use yii\helpers\Html;
 
@@ -76,6 +76,6 @@
     if (!empty($tc0)) { // restore parents vars
         $tc = $tc0;
         $menuItems = $menuItems0;
-    }//var_dump($_menuItems);
+    }
 
     return $_menuItems;

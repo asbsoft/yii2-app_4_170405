@@ -20,14 +20,14 @@
         //['label' => Yii::t($tc, 'Contact') . '-v3', 'url' => ['/contactform3frontend/main/index']],
     ];
     
-    $authItems = include Yii::getAlias('@project/views/layouts/auth-menu-items.php');//var_dump($authItems);
+    //$authItems = include Yii::getAlias('@project/views/layouts/auth-menu-items.php');
+    $authItems = include Yii::getAlias(__DIR__ . '/auth-menu-items.php');
 
-    $menuItems = ArrayHelper::merge($menuItemRoot, $menuItemsContent, $menuItems, $authItems);//var_dump($menuItems);exit;
+    $menuItems = ArrayHelper::merge($menuItemRoot, $menuItemsContent, $menuItems, $authItems);
 
     if (Yii::$app->type == UniApplication::APP_TYPE_UNITED && !empty(Yii::$app->params['adminPath']) ) {
         //$menuItems[] = ['label' => Yii::t($tc, 'Backend'), 'url' => ['//' . Yii::$app->params['adminPath']]];
         $menuItems[] = ['label' => Yii::t($tc, 'Backend'), 'url' => '/' . Yii::$app->params['adminPath']];
     }
 
-    //var_dump($menuItems);exit;
     return $menuItems;
