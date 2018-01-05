@@ -30,15 +30,16 @@
  */
 return [
     'Production' => [
-        'path' => 'prod',
+        'path' => basename(__FILE__, '.php'), // 'path' => 'prod',
         'setWritable' => [
-            'backend/runtime',
+            'runtime',
+          //'backend/runtime',
             'backend/web/assets',
             'backend/web/files',
-            'frontend/runtime',
+          //'frontend/runtime',
             'frontend/web/assets',
             'frontend/web/files',
-            'basic/runtime',
+          //'basic/runtime',
             'basic/web/assets',
             'basic/web/files',
         ],
