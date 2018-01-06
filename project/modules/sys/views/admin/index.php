@@ -1,11 +1,16 @@
 <?php
 
-    //var_dump(Yii::$app->user->identity);
-    $tc = $this->context->tcModule;//var_dump($tc);
+    use yii\helpers\Html;
+
+
+    $tc = $this->context->tcModule;
+
+    $title = Yii::t($tc, 'Admin startpage');
+    $this->title = Yii::t($tc, 'Adminer') . ' - ' . $title;
 
 ?>
 <div class="sys-admin-index">
-    <h1><?= Yii::t($tc, 'Admin startpage') ?></h1>
+    <h1><?= Html::encode($title) ?></h1>
 
     <p>
         ToDo: Something useful here: statistic, etc...
