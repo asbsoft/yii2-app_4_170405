@@ -64,4 +64,14 @@ class MainController extends BaseController
         return $this->renderPartial('lang-switch', ['list' => $list]);
     }
 
+    /** Original start page */
+    public function actionStartPage()
+    {
+        $layout = Yii::$app->layout;
+        Yii::$app->layout = Yii::$app->layout . '-startpage';
+        $result = $this->render('start-page');
+        Yii::$app->layout = $layout;
+        return $result;
+    }
+
 }

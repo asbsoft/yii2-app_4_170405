@@ -25,7 +25,7 @@
         "asbsoft/yii2-common_2_170212": "~2.10",
 
         "asbsoft/yii2module-users_0_170112": "~0.10",
-        "asbsoft/yii2module-content_2_170309": "~2.14",
+        "asbsoft/yii2module-content_2_170309": "~2.15",
         "asbsoft/yii2module-modmgr_1_161205": "~1.01"
     },
     "require-dev": {

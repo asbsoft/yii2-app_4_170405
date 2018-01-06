@@ -21,7 +21,7 @@
     use yii\helpers\ArrayHelper;
 
     /* Prepare some aliases need for autoload */
-    require __DIR__ . '/extensions-aliases.php';//var_dump(Yii::$aliases);exit;
+    require __DIR__ . '/extensions-aliases.php';
 
     /* Prepare some variables here:
         $type, $params, $paramsCms,
@@ -32,7 +32,7 @@
     $baseUrl = null;
     if ($type !== UniApplication::APP_TYPE_CONSOLE) {
         require_once Yii::getAlias('@asb/yii2/common_2_170212/web/RequestHelper.php');
-        $requestUri = RequestHelper::resolveRequestUri();//var_dump($requestUri);
+        $requestUri = RequestHelper::resolveRequestUri();
         //$baseUrl = $requestUri; // for run site from subdir
         $baseUrl = ''; // '' if not use shift webroot from / to /.../web/ by mod_rewrite in /.haccess
         if (!empty($adminUrlPrefixHtaccess)) {
@@ -41,7 +41,7 @@
                 $baseUrl = $prefix;
             }
         }
-    }//var_dump($baseUrl);exit;
+    }
 
     /* Basic system config */
     $configCms = [
@@ -59,8 +59,8 @@
         //'language' => 'en-US', // !! Do not set default language here.
 
         // Application default route.
-        // !! Do not set default route here if use content-module (asb\yii2\modules\content_2_170309\Module).
-        //'defaultRoute' => 'site', // 'site' is default route set in yii\web\Application
+        // If use content-module (asbsoft\yii2modules-content_2_170309) this route will ignore.
+        'defaultRoute' => 'sys/main/start-page', // note 'site' is default route set in yii\web\Application
 
         'components' => [
             'view' => [
@@ -191,10 +191,10 @@
         'class' => 'project\modules\sys\Module',
         'routesConfig' => [ // type => prefix|config
             'admin' => (isset($params['adminPath']) && $params['adminPath'] !== false) ? $params['adminPath'] : false,
-            'main'  => (isset($params['adminPath']) && $params['adminPath'] !== '') ? false : '',
+            'main'  => (isset($params['adminPath']) && $params['adminPath'] !== '') ? '' : false,
         ],
     ];
     $configCms['bootstrap'][] = $nextModuleId;
 
-    $configResult = ArrayHelper::merge($configCms, $config);//var_dump($configResult);exit;
+    $configResult = ArrayHelper::merge($configCms, $config);
     return $configResult;

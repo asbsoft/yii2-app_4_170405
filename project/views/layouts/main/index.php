@@ -15,6 +15,8 @@
 
     $tc = 'layout/main';
 
+    if (empty($brandLabel)) $brandLabel = Yii::t($tc, 'My site - main layout');
+
     $assets = SiteAsset::register($this);
 
 ?>
@@ -33,9 +35,8 @@
 
 <div class="wrap">
     <?php
-xdebug_break();
         NavBar::begin([
-            'brandLabel' => Yii::t($tc, 'My site - main layout'),
+            'brandLabel' => $brandLabel,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 //'class' => 'navbar-inverse navbar-fixed-top',
@@ -58,7 +59,9 @@ xdebug_break();
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
         <?= Alert::widget() ?>
-        <?= $content ?>
+        <div class="content">
+            <?= $content ?>
+        </div>
     </div>
 </div>
 

@@ -53,4 +53,7 @@ return [
     'Are you sure to logout?'
                         => 'Ви уверены, что хотите выйти?',
 
+// views/main/start-page.php
+    'Original start page'=>'Оригинальная стартовая страница',
+
 ];
