@@ -67,10 +67,10 @@ class MainController extends BaseController
     /** Original start page */
     public function actionStartPage()
     {
-        $layout = Yii::$app->layout;
-        Yii::$app->layout = Yii::$app->layout . '-startpage';
+        $layout = $this->layout;
+        $this->layout = '//' . Yii::$app->layout . '-startpage';
         $result = $this->render('start-page');
-        Yii::$app->layout = $layout;
+        $this->layout = $layout;
         return $result;
     }
 
