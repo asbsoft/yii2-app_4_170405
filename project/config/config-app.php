@@ -196,5 +196,8 @@
     ];
     $configCms['bootstrap'][] = $nextModuleId;
 
+    $configModules = require(__DIR__ . "/config-modules.php");
+    $configCms = ArrayHelper::merge($configCms, $configModules);
+
     $configResult = ArrayHelper::merge($configCms, $config);
     return $configResult;
