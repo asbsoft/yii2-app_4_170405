@@ -1,29 +1,29 @@
 <?php
+    /* @var $this yii\web\View */
+    /* @var $moduleUid string */
 
-use asb\yii2\common_2_170212\base\ModulesManager;
-use asb\yii2\common_2_170212\web\RoutesInfo;
+    use asb\yii2\common_2_170212\base\ModulesManager;
+    use asb\yii2\common_2_170212\web\RoutesInfo;
 
-use yii\helpers\Html;
+    use yii\helpers\Html;
 
-/**
-    @var $this yii\web\View
-    @var $moduleUid string
-*/
 
-    //var_dump(ModulesManager::appModulesList());
-    
-    $tc = $this->context->tcModule;//var_dump($tc);exit;
+    $tc = $this->context->tcModule;
+
+    $title = Yii::t($tc, 'System routes');
+    $this->title = Yii::t($tc, 'Adminer') . ' - ' . $title; 
 
     $modulesList = ModulesManager::modulesNamesList();//var_dump($modulesList);
-//$modulesList = [];//todo
+
     $result = RoutesInfo::showRoutes($moduleUid);//var_dump($result);
 
-    if (empty($result)) $result = Yii::t($tc, '(no routes for module)');
-
+    if (empty($result)) {
+        $result = Yii::t($tc, '(no routes for module)');
+    }
 
 ?>
 <h3>
-    <?= Yii::t($tc, 'System routes') ?>
+    <?= Html::encode($title) ?>
     <?php if (!empty($moduleUid)): ?>
         <?= Yii::t($tc, 'for module') ?> <?= $moduleUid ?>
     <?php endif; ?>
