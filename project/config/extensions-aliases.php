@@ -1,5 +1,6 @@
 <?php
     Yii::setAlias('@project', dirname(dirname(__DIR__)) . '/project');
+    Yii::setAlias('@data', dirname(dirname(__DIR__)) . '/data');
     
     // use for autoload (instead of composer's attempts)
     Yii::setAlias('@asb/yii2/common_2_170212', '@vendor/asbsoft/yii2-common_2_170212');
