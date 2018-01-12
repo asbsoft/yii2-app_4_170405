@@ -8,3 +8,7 @@
 .lang-switch .current {
     font-weight: bold;
 }
+
+.site-error {
+    text-align: center;
+}

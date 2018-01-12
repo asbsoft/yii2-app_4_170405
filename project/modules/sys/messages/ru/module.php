@@ -56,4 +56,7 @@ return [
 // views/main/start-page.php
     'Original start page'=>'Оригинальная стартовая страница',
 
+// views/main/error.php
+    'Something wrong'   => 'Что-то пошло не так',
+
 ];
