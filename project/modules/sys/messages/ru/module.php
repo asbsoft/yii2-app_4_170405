@@ -5,7 +5,6 @@ return [
     'Attention! Javascript is off!'
                         => 'Внимание! Javascript отключен!',
 
-    'Admin startpage'   => 'Админ стартовая',
     'Adminer'           => 'Админка',
     'Admin page'        => 'Страница администрирования',
     'Module'            => 'Модуль',
@@ -31,19 +30,13 @@ return [
     'show translations' => 'показать трансляции',
     'show aliases'      => 'показати сокращения',
     'clean cache'       => 'очистить буфер',
+    'change layout'     => 'сменить шаблон',
 
-// AdminController.php
+// controllers/AdminController.php
    'System translations'=> 'Системные трансляции',
    'System aliases'     => 'Системные сокращения (alias)',
    'All site cache has been flushed'
                         => 'Кеш сайта полностью очищен',
-
-// show-routes.php
-    'System routes'     => 'Роуты системы',
-    'application'       => 'приложение',
-    'for module'        => 'для модуля',
-    '(no routes for module)'
-                        => '(нет роутов для модуля)',
 
 // @asb/yii2/cms.../views/layouts/auth-menu-items.php
     'Login'             => 'Войти',
@@ -53,10 +46,31 @@ return [
     'Are you sure to logout?'
                         => 'Ви уверены, что хотите выйти?',
 
-// views/main/start-page.php
-    'Original start page'=>'Оригинальная стартовая страница',
+// views\admin\index.php
+    'Admin startpage'   => 'Админ стартовая',
+    "Current layout template is '{layout}'"
+                        => "Текущая главная тема-шаблон '{layout}'",
 
 // views/main/error.php
     'Something wrong'   => 'Что-то пошло не так',
+
+// views/admin/show-routes.php
+    'System routes'     => 'Роуты системы',
+    'application'       => 'приложение',
+    'for module'        => 'для модуля',
+    '(no routes for module)'
+                        => '(нет роутов для модуля)',
+
+// views/admin/change-layout.php, controllers/AdminController::actionChangeLayout()
+    'Change layout'     => 'Изменение главного шаблона-темы',
+    "Show layouts from '{layoutPath}'"
+                        => "Показываются шаблоны из '{layoutPath}'",
+    'Change'            => 'Изменить',
+    "Layout has been changed form '{old}' to '{new}'"
+                        => "Шаблон-тема была изменена с '{old}' на '{new}'",
+
+// views/main/start-page.php
+    'Original start page'=>'Оригинальная стартовая страница',
+    //...
 
 ];

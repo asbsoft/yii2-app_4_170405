@@ -13,6 +13,10 @@
     <h1><?= Html::encode($title) ?></h1>
 
     <p>
+        <?= Yii::t($tc, "Current layout template is '{layout}'", ['layout' => Yii::$app->layout]) ?>
+    </p>
+
+    <p>
         ToDo: Something useful here: statistic, etc...
     </p>
 

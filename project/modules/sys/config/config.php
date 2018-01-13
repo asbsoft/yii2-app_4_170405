@@ -5,12 +5,11 @@
     $type = empty(Yii::$app->type) ? false : Yii::$app->type;//var_dump($type);
 
     $config = [
-/*
         // shared models
         'models' => [ // alias => class name or object array
-            'UrlManager' => 'project\modules\sys\models\UrlManager', // move to yii2-common...
+            //'UrlManager' => 'project\modules\sys\models\UrlManager', // move to yii2-common...
+            'LayoutModel' => 'project\modules\sys\models\LayoutModel',
         ],
-*/
         'bootstrap' => [],
         'modules' => [],
     ];

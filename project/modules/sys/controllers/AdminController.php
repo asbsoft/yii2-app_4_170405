@@ -97,4 +97,26 @@ class AdminController extends BaseAdminController
         ]);
     }
 
+    public function actionChangeLayout()
+    {
+        $oldLayout = Yii::$app->layout;
+        $model = $this->module->model('LayoutModel');
+        $post = Yii::$app->request->post();
+        if ($model->load($post) && $model->save()) {
+            if ($oldLayout != $model->alias) {
+                Yii::$app->session->setFlash('success', Yii::t($this->tcModule
+                  , "Layout has been changed form '{old}' to '{new}'"
+                  , ['old' => $oldLayout, 'new' => $model->alias]));
+            }
+            return $this->redirect(['index']);
+        } else {
+            if (empty($model->alias)) {
+                $model->alias = $oldLayout;
+            }
+            return $this->render('change-layout', [
+                'model' => $model,
+            ]);
+        }
+    }
+
 }
