@@ -2,8 +2,10 @@
     /* @var $this yii\web\View */
     /* @var $moduleUid string */
 
+    use asb\yii2\common_2_170212\base\UniApplication;
     use asb\yii2\common_2_170212\base\ModulesManager;
     use asb\yii2\common_2_170212\web\RoutesInfo;
+    use asb\yii2\common_2_170212\helpers\ConfigsBuilder;
 
     use yii\helpers\Html;
 
@@ -13,11 +15,26 @@
     $title = Yii::t($tc, 'System routes');
     $this->title = Yii::t($tc, 'Adminer') . ' - ' . $title; 
 
-    $modulesList = ModulesManager::modulesNamesList();//var_dump($modulesList);
+    $modulesList = ModulesManager::modulesNamesList();
 
-    $result = RoutesInfo::showRoutes($moduleUid);//var_dump($result);
+    $result = RoutesInfo::showRoutes($moduleUid);
 
-    if (empty($result)) {
+    if (Yii::$app->appTemplate == UniApplication::APP_TEMPLATE_BASIC) {
+        $resultTitle = Yii::t($tc, 'frontend and backend routes');
+    } elseif (Yii::$app->appTemplate == UniApplication::APP_TEMPLATE_ADVANCED) { 
+        $resultTitle = Yii::t($tc, 'backend routes');
+        $resultFrontTitle = Yii::t($tc, 'frontend routes');
+
+        $savedApp = Yii::$app;
+        Yii::$app->cache->flush();
+        Yii::$app = null;
+        $appFront = require(__DIR__ . '/../../app/frontend.php'); // load frontend application
+        $appFront->trigger($appFront::EVENT_BEFORE_REQUEST); // add dynamic submodules by module manager
+        $resultFront = RoutesInfo::showRoutes($moduleUid, $appFront);
+        Yii::$app = $savedApp;
+    }
+
+    if (empty($result) && empty($resultFront)) {
         $result = Yii::t($tc, '(no routes for module)');
     }
 
@@ -43,6 +60,10 @@
 
 <br />
 
-<pre>
-<?= $result ?>
-</pre>
+<h4><?= Html::encode($resultTitle) ?></h4>
+<pre><?= $result ?></pre>
+
+<?php if (!empty($resultFront)): ?>
+    <h4><?= Html::encode($resultFrontTitle) ?></h4>
+    <pre><?= $resultFront ?></pre>
+<?php endif; ?>

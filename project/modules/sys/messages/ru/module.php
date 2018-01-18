@@ -60,6 +60,11 @@ return [
     'for module'        => 'для модуля',
     '(no routes for module)'
                         => '(нет роутов для модуля)',
+    'frontend and backend routes'
+                        => 'роуты фронтенда и бекенда',
+    'backend routes'    => 'роуты бекенда',
+    'frontend routes'   => 'роуты фронтенда',
+
 
 // views/admin/change-layout.php, controllers/AdminController::actionChangeLayout()
     'Change layout'     => 'Изменение главного шаблона-темы',
