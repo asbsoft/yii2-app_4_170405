@@ -14,7 +14,7 @@ return [
     'maxImageSize' => 204800,
 
     // Minimum required length of data
-    'slugMinLength'  => 5, //symbols
-    'titleMinLength' => 5, //symbols
+    'slugMinLength'  => 2, //symbols
+    'titleMinLength' => 2, //symbols
 
 ];

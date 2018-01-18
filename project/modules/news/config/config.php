@@ -5,9 +5,8 @@ use asb\yii2\common_2_170212\base\UniApplication;
 
 use yii\rest\UrlRule as RestUrlRule;
 
-
 //$sublink_front = 'news'; // default
-$sublink_front = 'events'; // change
+$sublink_front = 'events'; // changed
 $sublink_back = 'news'; // default
 
 $adminUrlPrefix = empty(Yii::$app->params['adminPath']) ? '' : Yii::$app->params['adminPath'] . '/';
