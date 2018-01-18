@@ -7,7 +7,7 @@
 
     use asb\yii2\common_2_170212\widgets\dropdownmultilevel\Menu as Nav; // use yii\bootstrap\Nav;
 
-    use project\assets\MainSiteAsset as SiteAsset;
+    use project\assets\MainSiteAsset as SiteAsset; // !! original for layout
 
     use yii\helpers\Html;
     use yii\bootstrap\NavBar;

@@ -6,9 +6,9 @@
     use yii\helpers\Html;
     use yii\helpers\ArrayHelper;
 
-    $tc = 'layout/main';
+    $tc = 'layout/main'; // !! original for layout
 
-    // link tostart page
+    // link to start page
     $menuItemRoot = [
         //['label' => Yii::t($tc, 'Index(orig)'), 'url' => '/site/index'],
     ];
@@ -19,7 +19,7 @@
     // additional items
     $menuItems = [
         //['label' => Yii::t($tc, 'News'), 'url' => ['/news-3b/main/index']],
-        //['label' => Yii::t($tc, 'Contacts'), 'url' => ['/contactform3-frontend/main/index']],
+        //['label' => Yii::t($tc, 'Contacts'), 'url' => ['/contacts/main/index']],
     ];
     
     // auth items

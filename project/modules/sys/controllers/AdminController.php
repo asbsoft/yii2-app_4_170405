@@ -58,7 +58,7 @@ class AdminController extends BaseAdminController
     }
 
     public function actionCleanCache()
-    {//echo __METHOD__;
+    {
         Yii::$app->cache->flush();
         Yii::$app->session->setFlash('success', Yii::t($this->tcModule, 'All site cache has been flushed'));
         return $this->redirect(['index']);

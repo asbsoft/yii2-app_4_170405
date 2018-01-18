@@ -1,7 +1,8 @@
 <?php
-/**
- * Some system tunes here depends on Yii2-application template (basic/advanced)
- */
+    /**
+     * Some system tunes here depends on Yii2-application template (basic/advanced)
+     */
+
     use asb\yii2\common_2_170212\base\UniApplication;
     use asb\yii2\common_2_170212\controllers\BaseController;
     use asb\yii2\common_2_170212\controllers\BaseAdminController;
@@ -19,7 +20,7 @@
     $errorActionBackend  = BaseAdminController::$errorActionUniqueId = "{$moduleSysUid}/admin/error";
 
     $type = empty($config['type']) ? false : $config['type'];
-    $params = empty($config['params']) ? [] : $config['params'];//var_dump($params);
+    $params = empty($config['params']) ? [] : $config['params'];
    
     $paramsCms = require_once __DIR__ . '/params-app.php'; // some defaults params
 
@@ -31,11 +32,11 @@
         $urlPrefixAdmin = $params['adminPath'] . '/';
     }
 
-    //$loginUrl = 'site/login'; // default in Yii kernel: 'site/login'
+    //$loginUrl = 'site/login'; // default in Yii kernel
     if ($type == UniApplication::APP_TYPE_FRONTEND) {
         $loginUrl = $routeLoginFrontend;
         $errorAction = $errorActionFrontend;
-        //BaseController::$layoutPath = '@project/views/layouts';//??
+        //BaseController::$layoutPath = '@asb/yii2/cms_3_170211/views/layouts';//??
     } elseif ($type == UniApplication::APP_TYPE_BACKEND) {
         $loginUrl = $routeLoginBackend;
         $errorAction = $errorActionBackend;
@@ -43,16 +44,10 @@
     } elseif ($type == UniApplication::APP_TYPE_UNITED) {
         $loginUrl = null; // not set or dynamic
         $errorAction = $errorActionFrontend;
-        //BaseController::$layoutPath = '@project/views/layouts';//??
+        //BaseController::$layoutPath = '@asb/yii2/cms_3_170211/views/layouts';//??
         BaseAdminController::$layoutPathBackend = '@project/views/layouts/_backend';
-/*
-        $layouts = [
-            'frontend' => 'main',
-            'backend' => '@project/views/layouts/backend/main',
-        ];
-/**/
     } else { // console app
         $loginUrl = null; // not set or dynamic
         $errorAction = $errorActionFrontend;
-    }//var_dump($loginUrl);var_dump($errorAction);exit;
+    }
 

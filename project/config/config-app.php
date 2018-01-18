@@ -1,24 +1,25 @@
 <?php
-
-/**
- * This is common default CMS config.
- * It's elements can be overwrite by $config elements.
- * @var $config array real application config (basic, advanced, console, etc)
- * @var $params application parameters
- * @return array corrected $config
- *
- * Note.
- * - $params['adminPath'] - admin URL prefix - can have values:
- *   - non-empty string (f.e. 'adm') - for basic Yii2-application template
- *   - empty string '' - for advanced-backend Yii2-application template
- *   - false - for advanced-frontend Yii2-application template
- */
+    /**
+     * This is common default CMS config.
+     * It's elements can be overwrite by $config elements.
+     * @var $config array real application config (basic, advanced, console, etc)
+     * @var $params application parameters
+     * @return array corrected $config
+     *
+     * Note.
+     * - $params['adminPath'] - admin URL prefix - can have values:
+     *   - non-empty string (f.e. 'adm') - for basic Yii2-application template
+     *   - empty string '' - for advanced-backend Yii2-application template
+     *   - false - for advanced-frontend Yii2-application template
+     */
 
     use asb\yii2\common_2_170212\base\UniApplication;
     use asb\yii2\common_2_170212\web\RequestHelper;
+    use project\modules\sys\models\LayoutModel;
 
     use yii\rbac\DbManager as AuthManager;
     use yii\helpers\ArrayHelper;
+
 
     /* Prepare some aliases need for autoload */
     require __DIR__ . '/extensions-aliases.php';
@@ -43,6 +44,8 @@
         }
     }
 
+    $savedLayout = LayoutModel::getSavedLayout($appTemplate, 'main');
+
     /* Basic system config */
     $configCms = [
         'params' => $paramsCms,
@@ -51,7 +54,7 @@
 
         // Site layout
         //'layout' => 'main', // 'main' is default layout set in yii\base\Application
-//      'layout' => 'new',
+        'layout' => $savedLayout,
 
         // Defauld language will get from LangHelper::defaultLanguage()
         // For turn off saving and getting default language from cookie,
