@@ -60,10 +60,10 @@
 
 <br />
 
-<h4><?= Html::encode($resultTitle) ?></h4>
-<pre><?= $result ?></pre>
-
 <?php if (!empty($resultFront)): ?>
     <h4><?= Html::encode($resultFrontTitle) ?></h4>
     <pre><?= $resultFront ?></pre>
 <?php endif; ?>
+
+<h4><?= Html::encode($resultTitle) ?></h4>
+<pre><?= $result ?></pre>
