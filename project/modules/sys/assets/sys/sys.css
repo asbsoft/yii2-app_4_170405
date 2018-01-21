@@ -8,6 +8,14 @@
 .lang-switch .current {
     font-weight: bold;
 }
+.lang-switch-dropdown a.lang-sw-link {
+    padding-left: 40px;
+}
+.lang-switch-dropdown li.dropdown a.lang-sw-link { /* correct flag styles */
+    /*line-height: 16px;/**/
+    /*line-height: 32px;/**/
+    width: 100%;
+}
 
 .site-error {
     text-align: center;

@@ -46,13 +46,10 @@ return [
     'Are you sure to logout?'
                         => 'Ви уверены, что хотите выйти?',
 
-// views\admin\index.php
+// views/admin/index.php
     'Admin startpage'   => 'Админ стартовая',
     "Current layout template is '{layout}'"
                         => "Текущая главная тема-шаблон '{layout}'",
-
-// views/main/error.php
-    'Something wrong'   => 'Что-то пошло не так',
 
 // views/admin/show-routes.php
     'System routes'     => 'Роуты системы',
@@ -77,5 +74,11 @@ return [
 // views/main/start-page.php
     'Original start page'=>'Оригинальная стартовая страница',
     //...
+
+// views/main/error.php
+    'Something wrong'   => 'Что-то пошло не так',
+
+// views/main/lang-switch-select.php
+    'select language'   => 'выберите язык',
 
 ];
