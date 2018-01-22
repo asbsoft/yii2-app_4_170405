@@ -53,4 +53,15 @@ Notes
 - For advanced backend you can use subdomain
   or URL prefix as in basic - tune /.htaccess and accordingly /backend/config/main.php:
     $adminUrlPrefixHtaccess = 'back';
+- To use original page instead of start page from content-module need to
+  * edit /project/modules/sys/modules/content/config/params.php:
+      //'useExternalStartPage' => false, // FALSE - default: will use content start page
+        'useExternalStartPage' => true, // will use Yii::$app->defaultRoute for render start page
+  * in /project/config/config-app.php need
+      'defaultRoute' => 'sys/main/start-page',
+  Use this defaultRoute for correct layouts switching.
+  It provide to use /project/views/layouts/LAYOUT_NAME/startpage.php as startpage layout-template.
+- For demo purposes in this project can be used additional modules
+    asbsoft/yii2module-contactform_3_170124
+    asbsoft/yii2module-news_3b_171202
 

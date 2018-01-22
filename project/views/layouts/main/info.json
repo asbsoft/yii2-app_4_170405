@@ -1,0 +1,10 @@
+{
+    "name": {
+        "en": "Main layout template",
+        "ru": "Главная тема-шаблон"
+    },
+    "description": {
+        "en": "Default demo layout template for project asbsoft/yii2-app_4_170405",
+        "ru": "Тема-шаблон по умолчанию для проекта asbsoft/yii2-app_4_170405"
+    }
+}

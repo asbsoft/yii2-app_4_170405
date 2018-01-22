@@ -1,19 +1,17 @@
 <?php
 
     /* @var $tc */
-    /* @var $menuItems */
+
+    use asb\yii2\common_2_170212\base\UniApplication;
 
     use yii\helpers\Html;
 
+
     if (!empty($tc)) { // save parents vars
         $tc0 = $tc;
-        $menuItems0 = $menuItems;
     }
 
-    $tc = 'app/sys/module';//$trlist = array_keys(Yii::$app->i18n->translations);$modlist = array_keys(Yii::$app->loadedModules);xdebug_break();
-
-    $moduleUsersUid = 'sys/users';
-    //$moduleUsersUid = 'users';
+    $tc = 'app/sys/module';
 
     $_menuItems = [];
 
@@ -26,7 +24,7 @@
             'linkOptions' => [
                  'class' => 'btn btn-link',
                  'data' => [
-                     'method' => 'post', //!! can't work without JS
+                     'method' => 'post',  // can't work without JS
                  ],
             ],
         ];
@@ -38,7 +36,7 @@
             'linkOptions' => [
                  'class' => 'btn btn-link',
                  'data' => [
-                     'method' => 'post', //!! can't work without JS
+                     'method' => 'post',  // can't work without JS
                  ],
             ],
         ];
@@ -73,9 +71,13 @@
 /**/
     }
 
+    // link to backend (basic application only)
+    if (!empty($showLinkToBackend) && Yii::$app->type == UniApplication::APP_TYPE_UNITED && !empty(Yii::$app->params['adminPath']) ) {
+        $_menuItems[] = ['label' => Yii::t($tc, 'Backend'), 'url' => '/' . Yii::$app->params['adminPath']];
+    }
+
     if (!empty($tc0)) { // restore parents vars
         $tc = $tc0;
-        $menuItems = $menuItems0;
     }
 
     return $_menuItems;
