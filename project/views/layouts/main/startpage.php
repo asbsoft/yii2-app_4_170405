@@ -50,8 +50,9 @@
         $menuItems = [
             ['url' => '#welcome',  'label' => Yii::t($tc, 'Welcome')],
             ['url' => '#features', 'label' => Yii::t($tc, 'Features')],
-            ['url' => '#news',     'label' => Yii::t($tc, 'Events')],
-            ['url' => '#contacts', 'label' => Yii::t($tc, 'Contacts')],
+          //['url' => '#news',     'label' => Yii::t($tc, 'Events')],
+            ['url' => '#about',    'label' => Yii::t($tc, 'About')],
+          //['url' => '#contacts', 'label' => Yii::t($tc, 'Contacts')],
             ['url' => '/intro',    'label' => Yii::t($tc, 'More'),
                 'linkOptions' => ['class' => 'ext-link']
             ],
@@ -81,12 +82,17 @@
         </div>
         <div id="news" class="ptmh">
             <div class="container">
-              <?php include __DIR__ . '/_block_news.php' ?>
+              <?php //include __DIR__ . '/_block_news.php' ?>
+            </div>
+        </div>
+        <div id="about" class="ptmh">
+            <div class="container">
+              <?php include __DIR__ . '/_block_about.php' ?>
             </div>
         </div>
         <div id="contacts" class="ptmh">
             <div class="container">
-              <?php include __DIR__ . '/_block_contacts.php' ?>
+              <?php //include __DIR__ . '/_block_contacts.php' ?>
             </div>
         </div>
     </div>

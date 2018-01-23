@@ -13,6 +13,7 @@ return [
     'Events'    => 'События',
     'Latest events' => 'Последние события',
     'Contacts'  => 'Контакты',
+    'About'     => 'О нас',
     'More'      => 'Далее',
 
     'Send your message here' => 'Отправьте ваше сообщение',

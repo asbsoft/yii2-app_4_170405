@@ -9,10 +9,12 @@
 
     if (empty($brandLabel)) $brandLabel = Yii::t($tc, 'ASBsoft');
 
-    $moduleUsersUid = 'sys/users';
-    $contactsModuleUid = 'contacts-in-project';
-    $contactFormTagId = 'site-contact-form';
-    $newsModuleUid = 'news-in-project';
+    // modules unique IDs
+    $moduleUsersUid    = 'sys/users';
+    $moduleContactsUid = 'contacts-ext';
+  //$moduleContactsUid = 'contacts-in-project';
+    $moduleNewsUid     = 'news-ext';
+  //$moduleNewsUid     = 'news-in-project';
 
     // select here type of languages switcher
   //$langSwitchType = 'list';     // or empty means default type - list of items, JS not need

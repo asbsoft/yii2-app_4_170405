@@ -11,7 +11,8 @@ $configModules = [];
 /* 
     // uncomment to use module
     $nextModuleId = 'news-ext';
-    $sublink = 'news-test'; // change if need (or use different sublinks for front/backend/rest)
+    //$sublink = 'news'; // change if need (or use different sublinks for front/backend/rest)
+    $sublink = 'events';
     $configModules['modules'][$nextModuleId] = [
         'class' => 'project\modules\news\Module',
         'params' => [

@@ -1,4 +1,8 @@
+<?php
+    
+    $contactFormTagId = 'site-contact-form';
 
+?>
     <div class="text-center">
         <h1 class="text-center">
             <small><?= Yii::t($tc, 'Contacts') ?></small>
@@ -30,7 +34,7 @@
             <h3><?= Yii::t($tc, 'Send your message here') ?></h3>
         </div>
         <div id="<?= $contactFormTagId ?>" class="contact-from col-md-5">
-            <?= Yii::$app->runAction("/{$contactsModuleUid}/main/form", [
+            <?= Yii::$app->runAction("/{$moduleContactsUid}/main/form", [
                 'ajaxReceiver' => $contactFormTagId,
             ]) ?>
         </div>
