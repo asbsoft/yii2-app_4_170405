@@ -35,22 +35,13 @@
         "codeception/base": "^2.2.3",
         "codeception/verify": "~0.3.1"
     },
-    "repositories": [
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2-common_2_170212.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2module-users_0_170112.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2module-content_2_170309.git"
-        },
-        {
-            "type": "git",
-            "url": "https://github.com/asbsoft/yii2module-modmgr_1_161205.git"
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset":{
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
         }
-    ]
+    }
 }
