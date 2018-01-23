@@ -44,7 +44,7 @@
         }
     }
 
-    $savedLayout = LayoutModel::getSavedLayout($appTemplate, 'main');
+    $savedLayout = LayoutModel::getSavedLayout($config['appTemplate'], 'main');
 
     /* Basic system config */
     $configCms = [
