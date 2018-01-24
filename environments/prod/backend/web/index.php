@@ -9,6 +9,12 @@ require_once(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/autoload.php'
 require_once(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/base/UniApplication.php');
 require_once(__DIR__ . '/../../vendor/asbsoft/yii2-common_2_170212/web/RequestHelper.php');
 
+if (realpath($_SERVER['DOCUMENT_ROOT']) == __DIR__) {
+    $adminUrlPrefixHtaccess = '';
+} else {
+    $adminUrlPrefixHtaccess = 'back';
+}
+
 $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/../../common/config/main.php'),
     require(__DIR__ . '/../../common/config/main-local.php'),

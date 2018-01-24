@@ -10,8 +10,8 @@ use asb\yii2\common_2_170212\base\UniApplication;
  */
 
 if (!isset($adminUrlPrefixHtaccess)) {
-    $adminUrlPrefixHtaccess = 'back';
-  //$adminUrlPrefixHtaccess = ''; // if no shift by .haccess
+  //$adminUrlPrefixHtaccess = 'back';
+    $adminUrlPrefixHtaccess = ''; // if no shift by .haccess
 }
 
 $appTemplate = UniApplication::APP_TEMPLATE_ADVANCED;
