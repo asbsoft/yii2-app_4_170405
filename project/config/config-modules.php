@@ -19,9 +19,13 @@ $configModules = [];
             'label' => 'News module included at project config',
         ],
         'routesConfig' => [ // type => prefix|config
-            'admin' => (isset($params['adminPath']) && $params['adminPath'] !== false) ? "{$params['adminPath']}/{$sublink}" : false,
-            'main'  => (isset($params['adminPath']) && $params['adminPath'] !== '') ? $sublink : false,
-            'rest'  => [
+            'admin' => [
+                'urlPrefix' => (isset($params['adminPath']) && $params['adminPath'] !== false) ? "{$params['adminPath']}/{$sublink}" : false,
+            ],
+            'main' => [
+                'urlPrefix' => (isset($params['adminPath']) && $params['adminPath'] !== '') ? $sublink : false,
+            ],
+            'rest' => [
                  'class' => YiiRestUrlRule::className(),
                  'urlPrefix'  => 'api',
                  'sublink' => $sublink,
@@ -41,9 +45,13 @@ $configModules = [];
             'label' => 'Contact form module included at project config',
         ],
         'routesConfig' => [ // type => prefix|config
-            'admin' => (isset($params['adminPath']) && $params['adminPath'] !== false) ? "{$params['adminPath']}/{$sublink}" : false,
-            'main'  => (isset($params['adminPath']) && $params['adminPath'] !== '') ? $sublink : false,
-            'rest'  => [
+            'admin' => [
+                'urlPrefix' => (isset($params['adminPath']) && $params['adminPath'] !== false) ? "{$params['adminPath']}/{$sublink}" : false,
+            ],
+            'main' => [
+                'urlPrefix' => (isset($params['adminPath']) && $params['adminPath'] !== '') ? $sublink : false,
+            ],
+            'rest' => [
                 'class' => RestUrlRule::className(),
                 'urlPrefix' => 'contacts-api',
                 'sublink'   => $sublink,
