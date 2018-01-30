@@ -16,5 +16,7 @@ return [
     'About'     => 'О нас',
     'More'      => 'Далее',
 
+    'All news'  => 'Все новости',
+
     'Send your message here' => 'Отправьте ваше сообщение',
 ];

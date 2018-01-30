@@ -1,6 +1,4 @@
-<?php
 
-?>
     <div class="col-md-9 col-md-offset-2 text-justify">
         <h1 class="text-center">
             <small><?= Yii::t($tc, 'Features') ?></small>

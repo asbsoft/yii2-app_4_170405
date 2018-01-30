@@ -73,11 +73,13 @@
     } else {
         if ($hasRoleRoot || $hasRoleAdmin) {
             $configWidget['items'][] = [ 'label' => Yii::t($tc, 'service'), 'items' => [
-                [ 'label' => Yii::t($tc, 'clean cache'), 'url' => ["/sys/admin/clean-cache"] ],
                 [ 'label' => Yii::t($tc, 'change layout'), 'url' => ["/sys/admin/change-layout"] ],
+
                 [ 'label' => Yii::t($tc, 'show routes'), 'url' => ["/sys/admin/show-routes"] ],
                 [ 'label' => Yii::t($tc, 'show translations'), 'url' => ["/sys/admin/show-translations"] ],
                 [ 'label' => Yii::t($tc, 'show aliases'), 'url' => ["/sys/admin/show-aliases"] ],
+
+                [ 'label' => Yii::t($tc, 'clean cache'), 'url' => ["/sys/admin/clean-cache"] ],
             ]];
         }
 /*

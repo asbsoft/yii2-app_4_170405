@@ -1,4 +1,8 @@
+<?php
 
+    use yii\helpers\Html;
+
+?>
     <div class="col-md-9 col-md-offset-2 text-center">
         <h1 class="text-center">
             <small><?= Yii::t($tc, 'Latest events') ?></small>
@@ -8,6 +12,10 @@
             'count' => 3,
             'title' => false,
         ]) ?>
+    </div>
+
+    <div class="col-md-9 col-md-offset-2 text-left">
+        <?= Html::a(Yii::t($tc, 'All news'), ["/{$moduleNewsUid}/main/list"]) ?>
     </div>
 
     <div class="col-md-9 col-md-offset-2 text-justify">
