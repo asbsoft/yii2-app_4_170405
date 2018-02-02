@@ -5,6 +5,7 @@
     // use for autoload (instead of composer's attempts)
     Yii::setAlias('@asb/yii2/common_2_170212', '@vendor/asbsoft/yii2-common_2_170212');
     Yii::setAlias('@asb/yii2/modules',         '@vendor/asbsoft/yii2module');
+    Yii::setAlias('@asb/yii2',                 '@vendor/asbsoft/yii2');
 
     Yii::setAlias('@yii/jui', '@vendor/yiisoft/yii2-jui');
 

@@ -9,7 +9,7 @@
   @author ASB <ab2014box@gmail.com>
 */
 return [
-
+//*
     'en-US' => [
         'prio'          => 10,
         'is_visible'    => true,
@@ -23,7 +23,7 @@ return [
         'name_orig'     => 'English',
         'id'            => 1,
     ],
-
+/**/
 //*
     'ru-RU' => [
         'prio'          => 30,
