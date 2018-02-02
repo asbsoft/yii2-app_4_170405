@@ -2,6 +2,8 @@
     /* @var $this yii\web\View */
     /* @var $moduleUid string */
 
+    use project\modules\sys\models\ApplicationModel;
+
     use asb\yii2\common_2_170212\base\UniApplication;
     use asb\yii2\common_2_170212\base\ModulesManager;
     use asb\yii2\common_2_170212\web\RoutesInfo;
@@ -25,13 +27,9 @@
         $resultTitle = Yii::t($tc, 'backend routes');
         $resultFrontTitle = Yii::t($tc, 'frontend routes');
 
-        $savedApp = Yii::$app;
-        Yii::$app->cache->flush();
-        Yii::$app = null;
-        $appFront = require(__DIR__ . '/../../app/frontend.php'); // load frontend application
-        $appFront->trigger($appFront::EVENT_BEFORE_REQUEST); // add dynamic submodules by module manager
+        $appFront = ApplicationModel::initFrontendApplication();
         $resultFront = RoutesInfo::showRoutes($moduleUid, $appFront);
-        Yii::$app = $savedApp;
+        ApplicationModel::restoreApplication();
     }
 
     if (empty($result) && empty($resultFront)) {
