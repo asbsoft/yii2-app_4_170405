@@ -16,13 +16,19 @@
     $_menuItems = [];
 
     if (Yii::$app->user->isGuest) {
-        $_menuItems[] = ['label' => Yii::t($tc, 'Login'), 'url' => ["/{$moduleUsersUid}/main/login"]];
+        $_menuItems[] = [
+            'label' => Yii::t($tc, 'Login'),
+            'url' => ["/{$moduleUsersUid}/main/login"],
+            'linkOptions' => [
+                 'class' => 'btn btn-link ext-link',
+            ],
+        ];
         //$_menuItems[] = ['label' => Yii::t($tc, 'Signup'), 'url' => ["/{$moduleUsersUid}/main/signup"]];
         $_menuItems[] = [
             'label' => Yii::t($tc, 'Signup'),
             'url' => ["/{$moduleUsersUid}/main/signup"],
             'linkOptions' => [
-                 'class' => 'btn btn-link',
+                 'class' => 'btn btn-link ext-link',
                  'data' => [
                      'method' => 'post',  // can't work without JS
                  ],
@@ -34,7 +40,7 @@
             'label' => Yii::t($tc, 'Profile') . ' (' . Yii::$app->user->identity->username . ')',
             'url' => ["/{$moduleUsersUid}/main/profile"],
             'linkOptions' => [
-                 'class' => 'btn btn-link',
+                 'class' => 'btn btn-link ext-link',
                  'data' => [
                      'method' => 'post',  // can't work without JS
                  ],
@@ -46,7 +52,7 @@
         $_menuItems[] = '<li>'
             . Html::beginForm(["/{$moduleUsersUid}/main/logout"], 'post')
             . Html::submitButton(Yii::t($tc, 'Logout') . ' (' . Yii::$app->user->identity->username . ')', [
-                  'class' => 'btn btn-link logout',
+                  'class' => 'btn btn-link logout ext-link',
                   'data' => [
                       'confirm' => Yii::t($tc, 'Are you sure to logout?'),
                   ],
@@ -60,7 +66,7 @@
             'label' => Yii::t($tc, 'Logout') . ' (' . Yii::$app->user->identity->username . ')',
             'url' => ["/{$moduleUsersUid}/main/logout"],
             'linkOptions' => [
-                 //'class' => 'btn btn-link logout',
+                 //'class' => 'btn btn-link logout ext-link',
                  'class' => 'logout',
                  'data' => [
                      'method' => 'post', //!! can't work without JS
