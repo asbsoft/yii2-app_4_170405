@@ -5,8 +5,8 @@ namespace project\modules\sys\models;
 use Yii;
 
 /**
- * Use for create frontend application inside backend application.
- * Useful for frontend routes manipulations.
+ * Create frontend application but not run.
+ * Useful for frontend routes manipulations inside backend application.
  */
 class ApplicationModel
 {
@@ -19,12 +19,21 @@ class ApplicationModel
         Yii::$app = null;
         $appFront = require(__DIR__ . '/../app/frontend.php'); // load frontend application
         $appFront->trigger($appFront::EVENT_BEFORE_REQUEST); // add dynamic submodules by module manager
+
+        // $appFront->request->baseUrl is not set here
+        if (!empty($appFront->params['frontedBaseUrl'])) {
+            $appFront->urlManager->baseUrl = $appFront->params['frontedBaseUrl'];  // set frontend base URL from app-params
+        }
+
         return $appFront;
     }
 
     public static function restoreApplication()
     {
-        Yii::$app = static::$savedApp;
+        if (static::$savedApp !== null) {
+            Yii::$app = static::$savedApp;
+            static::$savedApp = null;
+        }
     }
 
 }
