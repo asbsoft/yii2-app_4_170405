@@ -5,6 +5,7 @@
     use project\assets\MainSiteAsset as SiteAsset;  // original for layout
 
     use asb\yii2\common_2_170212\widgets\dropdownmultilevel\Menu as Nav; // use yii\bootstrap\Nav;
+    use asb\yii2\common_2_170212\widgets\Alert;
 
     use yii\helpers\Html;
     use yii\helpers\ArrayHelper;
@@ -68,7 +69,7 @@
     <?php NavBar::end(); ?>
 
     <div class="container">
-        <? echo Alert::widget() ?>
+        <?= Alert::widget() ?>
 
         <div id="welcome" class="ptmh">
             <div class="container">

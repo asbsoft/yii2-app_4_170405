@@ -56,7 +56,7 @@
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
 
-        <? echo Alert::widget() ?>
+        <?= Alert::widget() ?>
 
         <div class="content ptmh">
             <?= $content ?>
