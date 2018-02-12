@@ -2,6 +2,8 @@
 
 namespace project\modules\sys\controllers;
 
+use project\modules\sys\models\ApplicationModel;
+
 use asb\yii2\common_2_170212\base\UniModule;
 use asb\yii2\common_2_170212\base\ModulesManager;
 use asb\yii2\common_2_170212\controllers\BaseAdminController;
@@ -59,7 +61,12 @@ class AdminController extends BaseAdminController
 
     public function actionCleanCache()
     {
-        Yii::$app->cache->flush();
+        Yii::$app->cache->flush(); // advanced-backend or basic
+
+        $appFront = ApplicationModel::initFrontendApplication();
+        $appFront->cache->flush(); // advanced-frontend
+        ApplicationModel::restoreApplication();
+        
         Yii::$app->session->setFlash('success', Yii::t($this->tcModule, 'All site cache has been flushed'));
         return $this->redirect(['index']);
     }
