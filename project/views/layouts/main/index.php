@@ -37,7 +37,7 @@
             'brandLabel' => $siteName,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar-default navbar-fixed-top',
+                'class' => 'navbar-default',
             ],
         ]);
     ?>

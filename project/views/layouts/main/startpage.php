@@ -69,7 +69,9 @@
     <?php NavBar::end(); ?>
 
     <div class="container">
-        <?= Alert::widget() ?>
+        <div class="ptmh">
+            <?= Alert::widget() ?>
+        </div>
 
         <div id="welcome" class="ptmh">
             <div class="container">
