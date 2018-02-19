@@ -5,6 +5,23 @@
         </h1>
 
         <?php if ($mainLang == 'ru'): ?>
+            <p>Чтобы Yii::$app->runAction('...') не выдавал exception "404 Not found"
+               при попытке отрендерить несуществующий action на шаблоне, пользуйтесь аналогом -
+               \asb\yii2\common_2_170212\base\UniApplication:renderAction(),
+               который выдаст сообщение (в отладочном режиме) и запишет в журнал:
+            </p>
+        <?php else:  // default - 'en' ?>
+            <p>For Yii::$app->runAction('...') do not throw exception "404 Not found"
+               on trying render non-existent action on template, use similar -
+               \asb\yii2\common_2_170212\base\UniApplication:renderAction(),
+               which show message instead (in debug mode) and write to system log:
+            </p>
+        <?php endif; ?>
+        <?php //echo Yii::$app->runAction('/module-uid/ctrl/action-not-exists') // throw exception if action not found ?>
+        <?php echo Yii::$app->renderAction('/module-uid/ctrl/action-not-exists') ?>
+        <p>--- (end of illegal action) </p>
+
+        <?php if ($mainLang == 'ru'): ?>
             <p>Статический текст можно ввести здесь, но нужно учесть язык.
                Поэтому лучше использовать возможности мультиязычного виджета
                '/sys/content/main/render' из контент менеджера.
