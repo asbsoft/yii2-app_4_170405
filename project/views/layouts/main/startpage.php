@@ -70,6 +70,9 @@
 
     <div class="container">
         <div class="ptmh">
+            <noscript><h3 class="col-md-12 alert-danger text-center">
+                <?= Yii::t($tc, 'Attention! Javascript is off! Part of functionality will be inaccessible!') ?>
+            </h3></noscript>
             <?= Alert::widget() ?>
         </div>
 

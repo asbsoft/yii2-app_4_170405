@@ -56,6 +56,10 @@
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
 
+        <noscript><h3 class="col-md-12 alert-danger text-center">
+            <?= Yii::t($tc, 'Attention! Javascript is off! Part of functionality will be inaccessible!') ?>
+        </h3></noscript>
+
         <?= Alert::widget() ?>
 
         <div class="content ptmh">

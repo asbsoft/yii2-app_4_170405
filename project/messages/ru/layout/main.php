@@ -4,6 +4,9 @@ return [
     'My site - main layout' => 'Мой сайт - главный шаблон',
     'My site - startpage layout' => 'Мой сайт - шаблон стартовой',
 
+    'Attention! Javascript is off! Part of functionality will be inaccessible!'
+    => 'Внимание! Отключен Javascript! Часть функциональности будет недоступна!',
+
     'Welcome to ASBsoft CMS' => 'Добро пожаловать в ASBsoft CMS',
     'Move to top' => 'В начало',
     'Startpage' => 'Стартовая',
