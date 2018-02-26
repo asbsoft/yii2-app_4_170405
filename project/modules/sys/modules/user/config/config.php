@@ -1,5 +1,4 @@
-<?php //echo __FILE__;
-//var_dump(Yii::$app->layoutPath);
+<?php
 
     $config = [
         //'layoutPath' => '@project/modules/sys/views/layouts',
