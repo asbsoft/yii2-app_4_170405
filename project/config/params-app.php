@@ -6,6 +6,7 @@
 
 use asb\yii2\common_2_170212\i18n\LangHelper;
 use asb\yii2\common_2_170212\web\UserIdentity;
+use asb\yii2\common_2_170212\behaviors\ParamsAccessBehaviour;
 
 $version = '4:170405';
 
@@ -44,6 +45,19 @@ return [
     UserIdentity::className() => [
         'userModuleUniqueId' => 'sys/users',    // module uniqueId contains user identity
         'userManagerAlias'   => 'UserIdentity', // user identity model alias, see UniModule::model($alias)
+    ],
+
+    'behaviors' => [
+        'params-access' => [
+            'class' => ParamsAccessBehaviour::className(),
+            'defaultRole' => 'roleAdmin',
+            'readonlyParams' => [
+                'adminPath',
+                'webfilesSubdir',
+                '@uploadspath',
+                'uploadsDirectCopy',
+            ],
+        ],
     ],
 
 ];
