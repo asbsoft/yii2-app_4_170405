@@ -172,6 +172,7 @@
         'bootstrap' => [
             'asb\yii2\common_2_170212\base\CommonBootstrap', // common for all system
             'project\modules\modmgr\Bootstrap', // module manager's bootstrap
+            'project\modules\sys\modules\params\Bootstrap', // (latest here!!) modules parameters manager's bootstrap
         ],
         'modules' => [
             'modmgr' => [

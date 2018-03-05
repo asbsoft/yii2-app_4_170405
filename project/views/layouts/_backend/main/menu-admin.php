@@ -73,6 +73,8 @@
     } else {
         if ($hasRoleRoot || $hasRoleAdmin) {
             $configWidget['items'][] = [ 'label' => Yii::t($tc, 'service'), 'items' => [
+                [ 'label' => Yii::t($tc, 'parameters'), 'url' => ["/sys/params/admin/index", 'scalar' => 1] ],
+
                 [ 'label' => Yii::t($tc, 'change layout'), 'url' => ["/sys/admin/change-layout"] ],
 
                 [ 'label' => Yii::t($tc, 'show routes'), 'url' => ["/sys/admin/show-routes"] ],
