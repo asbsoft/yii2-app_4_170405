@@ -13,6 +13,8 @@ $version = '4:170405';
 //$tc = 'app/sys/module';
 
 return [
+    'siteName' => 'ASBsoft CMS',
+    'brandLabel' => 'ASBsoft',
     'id-cms' => "yii2cms@asb.v{$version}",
     'owner' => 'ASB',
     'product' => 'YII2 Application',

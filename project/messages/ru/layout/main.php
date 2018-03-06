@@ -21,5 +21,7 @@ return [
 
     'All news'  => 'Все новости',
 
+    'Multilanguage blocks can use together' => 'Разноязычные блоки можно использовать вместе',
+
     'Send your message here' => 'Отправьте ваше сообщение',
 ];

@@ -11,10 +11,10 @@
 
     // modules unique IDs
     $moduleUsersUid    = 'sys/users';
-    $moduleContactsUid = 'contacts-ext';
-  //$moduleContactsUid = 'contacts-in-project';
-    $moduleNewsUid     = 'news-ext';
-  //$moduleNewsUid     = 'news-in-project';
+  //$moduleContactsUid = 'contacts-ext';
+    $moduleContactsUid = 'contacts-in-project';
+  //$moduleNewsUid     = 'news-ext';
+    $moduleNewsUid     = 'news-in-project';
 
     // select here type of languages switcher
   //$langSwitchType = 'list';     // or empty means default type - list of items, JS not need

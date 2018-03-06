@@ -5,12 +5,28 @@
 ?>
     <div class="col-md-9 col-md-offset-2 text-center">
         <h1 class="text-center">
-            <small><?= Yii::t($tc, 'Latest events') ?></small>
+            <small><?= Yii::t($tc, 'Events') ?></small>
         </h1>
+        
+    </div>
 
+    <div class="col-md-9 col-md-offset-2 text-justify">
+        <?= Yii::$app->runAction('/sys/content/main/render', [
+                'id' => '/startpage-blocks/block-news',
+        ]) ?>
+    </div>
+
+    <div class="col-md-9 col-md-offset-2 text-center">
         <?= Yii::$app->runAction("/{$moduleNewsUid}/main/latest-news", [
-            'count' => 3,
-            'title' => false,
+            'emptyIfNothing' => true, // don't show title+message if no news
+
+            'count' => null, // to use default counter (tunes in backend parameters manager)
+          //'count' => 3, // fixed value
+          //'count' => 0, // nothing to show with 'emptyIfNothing' => true
+
+            'title' => Yii::t($tc, 'Latest events'), // set specific title
+          //'title' => null, // show default title in widget
+          //'title' => false, // don't show title in widget
         ]) ?>
     </div>
 
@@ -36,8 +52,4 @@
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
             </p>
         <?php endif; ?>
-        
-        <?= Yii::$app->runAction('/sys/content/main/render', [
-                'id' => '/startpage-blocks/block-news',
-        ]) ?>
     </div>
