@@ -3,8 +3,10 @@
 use asb\yii2\common_2_170212\base\UniConsoleApplication;
 $type = UniConsoleApplication::APP_TYPE_CONSOLE;
 
+$basePath = dirname(__DIR__);
 $rootDir = dirname(dirname(__DIR__));
-$vendorDir = $rootDir . DIRECTORY_SEPARATOR . 'vendor';
+$vendorDir = $rootDir . '/vendor';
+$runtimePath = $rootDir . '/runtime/console';
 
 Yii::setAlias('@vendor', $vendorDir);
 
@@ -20,14 +22,20 @@ $config = [
     'type' => $type,
 
     'id' => 'app-console',
-    'basePath' => dirname(__DIR__),
+    'basePath' => $basePath,
+    'runtimePath' => $runtimePath,
+    
     'bootstrap' => ['log'],
     'controllerNamespace' => 'console\controllers',
     'controllerMap' => [
         'fixture' => [
             'class' => 'yii\console\controllers\FixtureController',
             'namespace' => 'common\fixtures',
-          ],
+        ],
+        'migrate-module-users' => [
+            'class' => 'yii\console\controllers\MigrateController',
+            'migrationTable' => '{{%migration_module_users}}',
+        ],
     ],
     'components' => [
         'log' => [
