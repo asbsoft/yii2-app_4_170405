@@ -18,16 +18,20 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.10",
+        "yiisoft/yii2": "~2.0.12",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
 
         "asbsoft/yii2-common_2_170212": "~2.14.1",
 
-        "asbsoft/yii2module-params_1_180227": "~1.0.1",
-        "asbsoft/yii2module-users_1_180221": "~1.0",
+        "asbsoft/yii2module-modmgr_1_161205": "~1.02",
         "asbsoft/yii2module-content_2_170309": "~2.17",
-        "asbsoft/yii2module-modmgr_1_161205": "~1.02"
+        "asbsoft/yii2module-params_1_180227": "~1.0.1",
+
+        "asbsoft/yii2module-users_0_170112": "~0.20.1",
+        "asbsoft/yii2module-users_1_180221": "dev-master",
+
+        "asbsoft/yii2module-contactform_3_170124": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

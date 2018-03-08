@@ -35,7 +35,7 @@ $configModules = [];
     $configModules['bootstrap'][] = $nextModuleId;
 /**/
 
-/* 
+//* 
     // uncomment to use module
     $nextModuleId = 'contacts-ext';
     $sublink = 'contact-us'; // change if need (or use different sublinks for front/backend)

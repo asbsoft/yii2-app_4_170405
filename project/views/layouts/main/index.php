@@ -37,7 +37,7 @@
             'brandLabel' => $siteName,
             'brandUrl' => Yii::$app->homeUrl,
             'options' => [
-                'class' => 'navbar-default',
+                'class' => 'navbar-default navbar-fixed-top',
             ],
         ]);
     ?>
@@ -52,17 +52,17 @@
     <?php NavBar::end(); ?>
 
     <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-
-        <noscript><h3 class="col-md-12 alert-danger text-center">
-            <?= Yii::t($tc, 'Attention! Javascript is off! Part of functionality will be inaccessible!') ?>
-        </h3></noscript>
-
-        <?= Alert::widget() ?>
-
         <div class="content ptmh">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+
+            <noscript><h3 class="col-md-12 alert-danger text-center">
+                <?= Yii::t($tc, 'Attention! Javascript is off! Part of functionality will be inaccessible!') ?>
+            </h3></noscript>
+
+            <?= Alert::widget() ?>
+
             <?= $content ?>
         </div>
     </div>

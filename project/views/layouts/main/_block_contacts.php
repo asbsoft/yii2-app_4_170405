@@ -25,7 +25,7 @@
                 </p>
             <?php endif; ?>
 
-            <?= Yii::$app->runAction('/sys/content/main/render', [
+            <?= Yii::$app->renderAction('/sys/content/main/render', [
                 'id' => '/startpage-blocks/block-contacts',
             ]) ?>
         </div>
@@ -34,7 +34,7 @@
             <h3><?= Yii::t($tc, 'Send your message here') ?></h3>
         </div>
         <div id="<?= $contactFormTagId ?>" class="contact-from col-md-5">
-            <?= Yii::$app->runAction("/{$moduleContactsUid}/main/form", [
+            <?= Yii::$app->renderAction("/{$moduleContactsUid}/main/form", [
                 'ajaxReceiver' => $contactFormTagId,
             ]) ?>
         </div>

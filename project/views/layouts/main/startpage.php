@@ -53,7 +53,7 @@
             ['url' => '#features', 'label' => Yii::t($tc, 'Features')],
           //['url' => '#news',     'label' => Yii::t($tc, 'Events')],
             ['url' => '#about',    'label' => Yii::t($tc, 'About')],
-          //['url' => '#contacts', 'label' => Yii::t($tc, 'Contacts')],
+            ['url' => '#contacts', 'label' => Yii::t($tc, 'Contacts')],
             ['url' => '/intro',    'label' => Yii::t($tc, 'More'),
                 'linkOptions' => ['class' => 'ext-link']
             ],
@@ -98,7 +98,7 @@
         </div>
         <div id="contacts" class="ptmh">
             <div class="container">
-              <?php //include __DIR__ . '/_block_contacts.php' ?>
+              <?php include __DIR__ . '/_block_contacts.php' ?>
             </div>
         </div>
     </div>
