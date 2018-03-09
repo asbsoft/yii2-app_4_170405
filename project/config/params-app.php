@@ -58,7 +58,7 @@ return [
                 'webfilesSubdir',
                 '@uploadspath',
                 'uploadsDirectCopy',
-                'frontedBaseUrl',
+                'frontendBaseUrl',
             ],
         ],
     ],
