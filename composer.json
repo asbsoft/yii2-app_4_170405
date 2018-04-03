@@ -18,11 +18,11 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "yiisoft/yii2": "~2.0.12",
+        "yiisoft/yii2": "~2.0.12.1",
         "yiisoft/yii2-bootstrap": "~2.0.0",
         "yiisoft/yii2-swiftmailer": "~2.0.0",
 
-        "asbsoft/yii2-common_2_170212": "~2.14.1",
+        "asbsoft/yii2-common_2_170212": "~2.14.3",
 
         "asbsoft/yii2module-modmgr_1_161205": "~1.02",
         "asbsoft/yii2module-content_2_170309": "~2.17",

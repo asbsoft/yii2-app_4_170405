@@ -6,3 +6,5 @@ config/cookie-key.php
 config/main-local.php
 config/params-local.php
 config/test-local.php
+web/index.php
+web-test/index-test.php

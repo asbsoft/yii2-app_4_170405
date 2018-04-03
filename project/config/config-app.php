@@ -166,7 +166,9 @@
                     'appTypePrefix' => $type,
                 ],
             ],
-
+            'assetManager' => [
+                'class' => 'asb\yii2\common_2_170212\web\AssetManager', // correct Cygwin realpath() problem
+            ],
         ],
 
         'bootstrap' => [

@@ -5,3 +5,5 @@ web/files/
 config/cookie-key.php
 config/main-local.php
 config/params-local.php
+web/index.php
+web-test/index-test.php
